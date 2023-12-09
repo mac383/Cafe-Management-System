@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{849C7584-159A-46C1-9CBF-EA73E48EBA0D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Cafe_Management_System</RootNamespace>
+    <AssemblyName>Cafe Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.5\lib\net461\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Home\UserControls\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Home\UserControls\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Requests\UserControls\UC_Requests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Requests\UserControls\UC_Requests.Designer.cs">
+      <DependentUpon>UC_Requests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\frms\frm_AddUpdateOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\frms\frm_AddUpdateOptions.Designer.cs">
+      <DependentUpon>frm_AddUpdateOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\frms\frm_AddUpdateService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\frms\frm_AddUpdateService.Designer.cs">
+      <DependentUpon>frm_AddUpdateService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\frms\frm_AddUpdateServiceDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\frms\frm_AddUpdateServiceDepartment.Designer.cs">
+      <DependentUpon>frm_AddUpdateServiceDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\frms\frm_Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\frms\frm_Options.Designer.cs">
+      <DependentUpon>frm_Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\UserControls\UC_Services.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\UserControls\UC_Services.Designer.cs">
+      <DependentUpon>UC_Services.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\UserControls\UC_ServicesDepartment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\UserControls\UC_ServicesDepartment.Designer.cs">
+      <DependentUpon>UC_ServicesDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Services\UserControls\UC_ServicesSubButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Services\UserControls\UC_ServicesSubButtons.Designer.cs">
+      <DependentUpon>UC_ServicesSubButtons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\frms\frm_settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\frms\frm_settings.Designer.cs">
+      <DependentUpon>frm_settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tables\frms\frm_AddUpdateTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Tables\frms\frm_AddUpdateTable.Designer.cs">
+      <DependentUpon>frm_AddUpdateTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tables\UserControls\UC_Table.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tables\UserControls\UC_Table.Designer.cs">
+      <DependentUpon>UC_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Tables\UserControls\UC_Tables.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Tables\UserControls\UC_Tables.Designer.cs">
+      <DependentUpon>UC_Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_ManagementAppUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_ManagementAppUsers.Designer.cs">
+      <DependentUpon>UC_ManagementAppUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_ServicesAppUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_ServicesAppUsers.Designer.cs">
+      <DependentUpon>UC_ServicesAppUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_UsersSubButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_UsersSubButtons.Designer.cs">
+      <DependentUpon>UC_UsersSubButtons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_main.designer.cs">
+      <DependentUpon>frm_main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GLOBAL CLASSES\cls_util.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Home\UserControls\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Requests\UserControls\UC_Requests.resx">
+      <DependentUpon>UC_Requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\frms\frm_AddUpdateOptions.resx">
+      <DependentUpon>frm_AddUpdateOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\frms\frm_AddUpdateService.resx">
+      <DependentUpon>frm_AddUpdateService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\frms\frm_AddUpdateServiceDepartment.resx">
+      <DependentUpon>frm_AddUpdateServiceDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\frms\frm_Options.resx">
+      <DependentUpon>frm_Options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\UserControls\UC_Services.resx">
+      <DependentUpon>UC_Services.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\UserControls\UC_ServicesDepartment.resx">
+      <DependentUpon>UC_ServicesDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Services\UserControls\UC_ServicesSubButtons.resx">
+      <DependentUpon>UC_ServicesSubButtons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\frms\frm_settings.resx">
+      <DependentUpon>frm_settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tables\frms\frm_AddUpdateTable.resx">
+      <DependentUpon>frm_AddUpdateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tables\UserControls\UC_Table.resx">
+      <DependentUpon>UC_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Tables\UserControls\UC_Tables.resx">
+      <DependentUpon>UC_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserControls\UC_ManagementAppUsers.resx">
+      <DependentUpon>UC_ManagementAppUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserControls\UC_ServicesAppUsers.resx">
+      <DependentUpon>UC_ServicesAppUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserControls\UC_UsersSubButtons.resx">
+      <DependentUpon>UC_UsersSubButtons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_main.resx">
+      <DependentUpon>frm_main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Settings\UserControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close 64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CAFE MANAGEMENT-BUSINESS\CAFE MANAGEMENT-BUSINESS.csproj">
+      <Project>{8f22d0a2-b341-44a2-87eb-49e667671b5e}</Project>
+      <Name>CAFE MANAGEMENT-BUSINESS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empty image.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

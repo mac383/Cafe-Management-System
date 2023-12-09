@@ -1,0 +1,32 @@
+J:\Projects\Cafe Management System\bin\Debug\Cafe Management System.exe.config
+J:\Projects\Cafe Management System\bin\Debug\Cafe Management System.exe
+J:\Projects\Cafe Management System\bin\Debug\Cafe Management System.pdb
+J:\Projects\Cafe Management System\obj\Debug\Cafe Management System.csproj.AssemblyReference.cache
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.frm_main.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Properties.Resources.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe Management System.csproj.GenerateResource.cache
+J:\Projects\Cafe Management System\obj\Debug\Cafe Management System.csproj.CoreCompileInputs.cache
+J:\Projects\Cafe Management System\obj\Debug\Cafe Management System.exe
+J:\Projects\Cafe Management System\obj\Debug\Cafe Management System.pdb
+J:\Projects\Cafe Management System\bin\Debug\Guna.UI2.dll
+J:\Projects\Cafe Management System\obj\Debug\Cafe Management System.csproj.CopyComplete
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Home.UserControls.UC_Home.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Tables.UserControls.UC_Tables.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.UserControls.UC_Services.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.UserControls.UC_ServicesSubButtons.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.UserControls.UC_ServicesDepartment.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_ManagementAppUsers.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_ServicesAppUsers.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_UsersSubButtons.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.frms.frm_settings.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Tables.UserControls.UC_Table.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Tables.frms.frm_AddUpdateTable.resources
+J:\Projects\Cafe Management System\bin\Debug\CAFE MANAGEMENT-BUSINESS.dll
+J:\Projects\Cafe Management System\bin\Debug\CAFE MANAGEMENT-DATAACCESS.dll
+J:\Projects\Cafe Management System\bin\Debug\CAFE MANAGEMENT-BUSINESS.pdb
+J:\Projects\Cafe Management System\bin\Debug\CAFE MANAGEMENT-DATAACCESS.pdb
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.frms.frm_AddUpdateServiceDepartment.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.frms.frm_AddUpdateService.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.frms.frm_Options.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.frms.frm_AddUpdateOptions.resources
+J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Requests.UserControls.UC_Requests.resources
