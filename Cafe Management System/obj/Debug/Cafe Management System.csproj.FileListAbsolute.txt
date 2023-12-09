@@ -30,3 +30,35 @@ J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Servic
 J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.frms.frm_Options.resources
 J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.frms.frm_AddUpdateOptions.resources
 J:\Projects\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Requests.UserControls.UC_Requests.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\bin\Debug\Cafe Management System.exe.config
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\bin\Debug\Cafe Management System.exe
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\bin\Debug\Cafe Management System.pdb
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\bin\Debug\CAFE MANAGEMENT-BUSINESS.dll
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\bin\Debug\Guna.UI2.dll
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\bin\Debug\CAFE MANAGEMENT-DATAACCESS.dll
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\bin\Debug\CAFE MANAGEMENT-BUSINESS.pdb
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\bin\Debug\CAFE MANAGEMENT-DATAACCESS.pdb
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.csproj.AssemblyReference.cache
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Home.UserControls.UC_Home.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Requests.UserControls.UC_Requests.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.frms.frm_AddUpdateOptions.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.frms.frm_AddUpdateService.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.frms.frm_AddUpdateServiceDepartment.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.frms.frm_Options.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.UserControls.UC_Services.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.UserControls.UC_ServicesDepartment.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.UserControls.UC_ServicesSubButtons.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.frms.frm_settings.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Tables.frms.frm_AddUpdateTable.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Tables.UserControls.UC_Table.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Tables.UserControls.UC_Tables.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_ManagementAppUsers.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_ServicesAppUsers.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_UsersSubButtons.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.frm_main.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Properties.Resources.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.csproj.GenerateResource.cache
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.csproj.CoreCompileInputs.cache
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.csproj.CopyComplete
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.exe
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.pdb

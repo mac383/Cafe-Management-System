@@ -257,6 +257,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms\More\UserControls\" />
     <Folder Include="Forms\Settings\UserControls\" />
   </ItemGroup>
   <ItemGroup>
@@ -276,6 +277,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\empty image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

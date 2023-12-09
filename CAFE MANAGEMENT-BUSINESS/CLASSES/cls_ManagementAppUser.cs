@@ -17,7 +17,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
 
         }
 
-        public static cls_ManagementAppUser Find(string UserName)
+        public static cls_ManagementAppUser Find(int UserID)
         {
             return null;
         }

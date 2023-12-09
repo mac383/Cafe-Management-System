@@ -7,3 +7,12 @@ J:\Projects\CAFE MANAGEMENT-BUSINESS\obj\Debug\CAFE MANAGEMENT-BUSINESS.csproj.C
 J:\Projects\CAFE MANAGEMENT-BUSINESS\obj\Debug\CAFE MANAGEMENT-BUSINESS.csproj.CopyComplete
 J:\Projects\CAFE MANAGEMENT-BUSINESS\obj\Debug\CAFE MANAGEMENT-BUSINESS.dll
 J:\Projects\CAFE MANAGEMENT-BUSINESS\obj\Debug\CAFE MANAGEMENT-BUSINESS.pdb
+J:\GitHubProjects\Cafe-Management-System\CAFE MANAGEMENT-BUSINESS\bin\Debug\CAFE MANAGEMENT-BUSINESS.dll
+J:\GitHubProjects\Cafe-Management-System\CAFE MANAGEMENT-BUSINESS\bin\Debug\CAFE MANAGEMENT-BUSINESS.pdb
+J:\GitHubProjects\Cafe-Management-System\CAFE MANAGEMENT-BUSINESS\bin\Debug\CAFE MANAGEMENT-DATAACCESS.dll
+J:\GitHubProjects\Cafe-Management-System\CAFE MANAGEMENT-BUSINESS\bin\Debug\CAFE MANAGEMENT-DATAACCESS.pdb
+J:\GitHubProjects\Cafe-Management-System\CAFE MANAGEMENT-BUSINESS\obj\Debug\CAFE MANAGEMENT-BUSINESS.csproj.AssemblyReference.cache
+J:\GitHubProjects\Cafe-Management-System\CAFE MANAGEMENT-BUSINESS\obj\Debug\CAFE MANAGEMENT-BUSINESS.csproj.CoreCompileInputs.cache
+J:\GitHubProjects\Cafe-Management-System\CAFE MANAGEMENT-BUSINESS\obj\Debug\CAFE MANAGEMENT-BUSINESS.csproj.CopyComplete
+J:\GitHubProjects\Cafe-Management-System\CAFE MANAGEMENT-BUSINESS\obj\Debug\CAFE MANAGEMENT-BUSINESS.dll
+J:\GitHubProjects\Cafe-Management-System\CAFE MANAGEMENT-BUSINESS\obj\Debug\CAFE MANAGEMENT-BUSINESS.pdb
