@@ -32,6 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_services = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_servicename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_servicedescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_departmentname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_serviceoptions = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.col_serviceid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_serviceimage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.إضافةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الاسمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,13 +54,8 @@
             this.cb_filter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txt_searchtable = new Guna.UI2.WinForms.Guna2TextBox();
-            this.col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_servicename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_servicedescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_departmentname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_serviceoptions = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.col_serviceid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_serviceimage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmb_refresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_services)).BeginInit();
             this.guna2ContextMenuStrip1.SuspendLayout();
             this.pnl_Top.SuspendLayout();
@@ -131,6 +133,66 @@
             this.dgv_services.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_services_CellContentClick);
             this.dgv_services.DoubleClick += new System.EventHandler(this.dgv_services_DoubleClick);
             // 
+            // col_ID
+            // 
+            this.col_ID.FillWeight = 50F;
+            this.col_ID.HeaderText = "ت";
+            this.col_ID.MinimumWidth = 8;
+            this.col_ID.Name = "col_ID";
+            this.col_ID.ReadOnly = true;
+            // 
+            // col_servicename
+            // 
+            this.col_servicename.HeaderText = "الخدمة";
+            this.col_servicename.MinimumWidth = 8;
+            this.col_servicename.Name = "col_servicename";
+            this.col_servicename.ReadOnly = true;
+            // 
+            // col_servicedescription
+            // 
+            this.col_servicedescription.FillWeight = 210F;
+            this.col_servicedescription.HeaderText = "الوصف";
+            this.col_servicedescription.MinimumWidth = 8;
+            this.col_servicedescription.Name = "col_servicedescription";
+            this.col_servicedescription.ReadOnly = true;
+            this.col_servicedescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // col_departmentname
+            // 
+            this.col_departmentname.FillWeight = 80F;
+            this.col_departmentname.HeaderText = "القسم";
+            this.col_departmentname.MinimumWidth = 8;
+            this.col_departmentname.Name = "col_departmentname";
+            this.col_departmentname.ReadOnly = true;
+            this.col_departmentname.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // col_serviceoptions
+            // 
+            this.col_serviceoptions.FillWeight = 70F;
+            this.col_serviceoptions.HeaderText = "الخيارات";
+            this.col_serviceoptions.MinimumWidth = 8;
+            this.col_serviceoptions.Name = "col_serviceoptions";
+            this.col_serviceoptions.ReadOnly = true;
+            this.col_serviceoptions.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_serviceoptions.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.col_serviceoptions.ToolTipText = "أنقر للعرض";
+            // 
+            // col_serviceid
+            // 
+            this.col_serviceid.HeaderText = "Service ID";
+            this.col_serviceid.MinimumWidth = 8;
+            this.col_serviceid.Name = "col_serviceid";
+            this.col_serviceid.ReadOnly = true;
+            this.col_serviceid.Visible = false;
+            // 
+            // col_serviceimage
+            // 
+            this.col_serviceimage.HeaderText = "Service Image";
+            this.col_serviceimage.MinimumWidth = 8;
+            this.col_serviceimage.Name = "col_serviceimage";
+            this.col_serviceimage.ReadOnly = true;
+            this.col_serviceimage.Visible = false;
+            // 
             // guna2ContextMenuStrip1
             // 
             this.guna2ContextMenuStrip1.BackColor = System.Drawing.Color.White;
@@ -141,6 +203,8 @@
             this.cmb_showoptions,
             this.cmb_addoption,
             this.toolStripSeparator2,
+            this.cmb_refresh,
+            this.toolStripSeparator3,
             this.cmb_addnew,
             this.cmb_update,
             this.cmb_delete});
@@ -155,14 +219,14 @@
             this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(225, 208);
+            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(241, 279);
             // 
             // إضافةToolStripMenuItem
             // 
             this.إضافةToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.الاسمToolStripMenuItem});
             this.إضافةToolStripMenuItem.Name = "إضافةToolStripMenuItem";
-            this.إضافةToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.إضافةToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
             this.إضافةToolStripMenuItem.Text = "فرز حسب";
             // 
             // الاسمToolStripMenuItem
@@ -175,45 +239,45 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(237, 6);
             // 
             // cmb_showoptions
             // 
             this.cmb_showoptions.Name = "cmb_showoptions";
-            this.cmb_showoptions.Size = new System.Drawing.Size(224, 32);
+            this.cmb_showoptions.Size = new System.Drawing.Size(240, 32);
             this.cmb_showoptions.Text = "عرض الخيارات";
             this.cmb_showoptions.Click += new System.EventHandler(this.cmb_showoptions_Click);
             // 
             // cmb_addoption
             // 
             this.cmb_addoption.Name = "cmb_addoption";
-            this.cmb_addoption.Size = new System.Drawing.Size(224, 32);
+            this.cmb_addoption.Size = new System.Drawing.Size(240, 32);
             this.cmb_addoption.Text = "إضافة خيارات";
             this.cmb_addoption.Click += new System.EventHandler(this.cmb_addoption_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(237, 6);
             // 
             // cmb_addnew
             // 
             this.cmb_addnew.Name = "cmb_addnew";
-            this.cmb_addnew.Size = new System.Drawing.Size(224, 32);
+            this.cmb_addnew.Size = new System.Drawing.Size(240, 32);
             this.cmb_addnew.Text = "إضافة خدمة جديدة";
             this.cmb_addnew.Click += new System.EventHandler(this.cmb_addnew_Click);
             // 
             // cmb_update
             // 
             this.cmb_update.Name = "cmb_update";
-            this.cmb_update.Size = new System.Drawing.Size(224, 32);
+            this.cmb_update.Size = new System.Drawing.Size(240, 32);
             this.cmb_update.Text = "تعديل";
             this.cmb_update.Click += new System.EventHandler(this.cmb_update_Click);
             // 
             // cmb_delete
             // 
             this.cmb_delete.Name = "cmb_delete";
-            this.cmb_delete.Size = new System.Drawing.Size(224, 32);
+            this.cmb_delete.Size = new System.Drawing.Size(240, 32);
             this.cmb_delete.Text = "حذف";
             this.cmb_delete.Click += new System.EventHandler(this.cmb_delete_Click);
             // 
@@ -300,65 +364,17 @@
             this.txt_searchtable.TabIndex = 11;
             this.txt_searchtable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // col_ID
+            // cmb_refresh
             // 
-            this.col_ID.FillWeight = 50F;
-            this.col_ID.HeaderText = "ت";
-            this.col_ID.MinimumWidth = 8;
-            this.col_ID.Name = "col_ID";
-            this.col_ID.ReadOnly = true;
+            this.cmb_refresh.Name = "cmb_refresh";
+            this.cmb_refresh.Size = new System.Drawing.Size(240, 32);
+            this.cmb_refresh.Text = "تحديث";
+            this.cmb_refresh.Click += new System.EventHandler(this.cmb_refresh_Click);
             // 
-            // col_servicename
+            // toolStripSeparator3
             // 
-            this.col_servicename.HeaderText = "الخدمة";
-            this.col_servicename.MinimumWidth = 8;
-            this.col_servicename.Name = "col_servicename";
-            this.col_servicename.ReadOnly = true;
-            // 
-            // col_servicedescription
-            // 
-            this.col_servicedescription.FillWeight = 210F;
-            this.col_servicedescription.HeaderText = "الوصف";
-            this.col_servicedescription.MinimumWidth = 8;
-            this.col_servicedescription.Name = "col_servicedescription";
-            this.col_servicedescription.ReadOnly = true;
-            this.col_servicedescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // col_departmentname
-            // 
-            this.col_departmentname.FillWeight = 80F;
-            this.col_departmentname.HeaderText = "القسم";
-            this.col_departmentname.MinimumWidth = 8;
-            this.col_departmentname.Name = "col_departmentname";
-            this.col_departmentname.ReadOnly = true;
-            this.col_departmentname.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // col_serviceoptions
-            // 
-            this.col_serviceoptions.FillWeight = 70F;
-            this.col_serviceoptions.HeaderText = "الخيارات";
-            this.col_serviceoptions.MinimumWidth = 8;
-            this.col_serviceoptions.Name = "col_serviceoptions";
-            this.col_serviceoptions.ReadOnly = true;
-            this.col_serviceoptions.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_serviceoptions.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.col_serviceoptions.ToolTipText = "أنقر للعرض";
-            // 
-            // col_serviceid
-            // 
-            this.col_serviceid.HeaderText = "Service ID";
-            this.col_serviceid.MinimumWidth = 8;
-            this.col_serviceid.Name = "col_serviceid";
-            this.col_serviceid.ReadOnly = true;
-            this.col_serviceid.Visible = false;
-            // 
-            // col_serviceimage
-            // 
-            this.col_serviceimage.HeaderText = "Service Image";
-            this.col_serviceimage.MinimumWidth = 8;
-            this.col_serviceimage.Name = "col_serviceimage";
-            this.col_serviceimage.ReadOnly = true;
-            this.col_serviceimage.Visible = false;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(237, 6);
             // 
             // UC_Services
             // 
@@ -402,5 +418,7 @@
         private System.Windows.Forms.DataGridViewLinkColumn col_serviceoptions;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_serviceid;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_serviceimage;
+        private System.Windows.Forms.ToolStripMenuItem cmb_refresh;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

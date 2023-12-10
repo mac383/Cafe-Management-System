@@ -40,9 +40,9 @@
             this.col_optionid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_optionvalue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.إضافةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الاسمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.السعرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmb_sorting = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmb_sortingbyname = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmb_sortingbyprice = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cmb_addnew = new System.Windows.Forms.ToolStripMenuItem();
             this.cmb_update = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +50,8 @@
             this.pnl_Header = new System.Windows.Forms.Panel();
             this.lbl_pagetitle = new System.Windows.Forms.Label();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.cmb_refresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.pnl_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_options)).BeginInit();
             this.guna2ContextMenuStrip1.SuspendLayout();
@@ -199,8 +201,10 @@
             this.guna2ContextMenuStrip1.BackColor = System.Drawing.Color.White;
             this.guna2ContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.guna2ContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.إضافةToolStripMenuItem,
+            this.cmb_sorting,
             this.toolStripSeparator1,
+            this.cmb_refresh,
+            this.toolStripSeparator2,
             this.cmb_addnew,
             this.cmb_update,
             this.cmb_delete});
@@ -215,54 +219,56 @@
             this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(206, 138);
+            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(241, 209);
             // 
-            // إضافةToolStripMenuItem
+            // cmb_sorting
             // 
-            this.إضافةToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.الاسمToolStripMenuItem,
-            this.السعرToolStripMenuItem});
-            this.إضافةToolStripMenuItem.Name = "إضافةToolStripMenuItem";
-            this.إضافةToolStripMenuItem.Size = new System.Drawing.Size(205, 32);
-            this.إضافةToolStripMenuItem.Text = "فرز حسب";
+            this.cmb_sorting.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmb_sortingbyname,
+            this.cmb_sortingbyprice});
+            this.cmb_sorting.Name = "cmb_sorting";
+            this.cmb_sorting.Size = new System.Drawing.Size(240, 32);
+            this.cmb_sorting.Text = "فرز حسب";
             // 
-            // الاسمToolStripMenuItem
+            // cmb_sortingbyname
             // 
-            this.الاسمToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.الاسمToolStripMenuItem.Name = "الاسمToolStripMenuItem";
-            this.الاسمToolStripMenuItem.Size = new System.Drawing.Size(159, 34);
-            this.الاسمToolStripMenuItem.Text = "الاسم";
+            this.cmb_sortingbyname.BackColor = System.Drawing.Color.White;
+            this.cmb_sortingbyname.Name = "cmb_sortingbyname";
+            this.cmb_sortingbyname.Size = new System.Drawing.Size(270, 34);
+            this.cmb_sortingbyname.Text = "الاسم";
+            this.cmb_sortingbyname.Click += new System.EventHandler(this.cmb_sortingbyname_Click);
             // 
-            // السعرToolStripMenuItem
+            // cmb_sortingbyprice
             // 
-            this.السعرToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.السعرToolStripMenuItem.Name = "السعرToolStripMenuItem";
-            this.السعرToolStripMenuItem.Size = new System.Drawing.Size(159, 34);
-            this.السعرToolStripMenuItem.Text = "السعر";
+            this.cmb_sortingbyprice.BackColor = System.Drawing.Color.White;
+            this.cmb_sortingbyprice.Name = "cmb_sortingbyprice";
+            this.cmb_sortingbyprice.Size = new System.Drawing.Size(270, 34);
+            this.cmb_sortingbyprice.Text = "السعر";
+            this.cmb_sortingbyprice.Click += new System.EventHandler(this.cmb_sortingbyprice_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(202, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(237, 6);
             // 
             // cmb_addnew
             // 
             this.cmb_addnew.Name = "cmb_addnew";
-            this.cmb_addnew.Size = new System.Drawing.Size(205, 32);
+            this.cmb_addnew.Size = new System.Drawing.Size(240, 32);
             this.cmb_addnew.Text = "إضافة خيار جديد";
             this.cmb_addnew.Click += new System.EventHandler(this.cmb_addnew_Click);
             // 
             // cmb_update
             // 
             this.cmb_update.Name = "cmb_update";
-            this.cmb_update.Size = new System.Drawing.Size(205, 32);
+            this.cmb_update.Size = new System.Drawing.Size(240, 32);
             this.cmb_update.Text = "تعديل";
             this.cmb_update.Click += new System.EventHandler(this.cmb_update_Click);
             // 
             // cmb_delete
             // 
             this.cmb_delete.Name = "cmb_delete";
-            this.cmb_delete.Size = new System.Drawing.Size(205, 32);
+            this.cmb_delete.Size = new System.Drawing.Size(240, 32);
             this.cmb_delete.Text = "حذف";
             this.cmb_delete.Click += new System.EventHandler(this.cmb_delete_Click);
             // 
@@ -297,6 +303,18 @@
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(25, 25);
             this.guna2ControlBox1.TabIndex = 6;
+            // 
+            // cmb_refresh
+            // 
+            this.cmb_refresh.Name = "cmb_refresh";
+            this.cmb_refresh.Size = new System.Drawing.Size(240, 32);
+            this.cmb_refresh.Text = "تحديث";
+            this.cmb_refresh.Click += new System.EventHandler(this.cmb_refresh_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(237, 6);
             // 
             // frm_Options
             // 
@@ -333,12 +351,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_optionvalue;
         private System.Windows.Forms.Label lbl_pagetitle;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem إضافةToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem الاسمToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cmb_sorting;
+        private System.Windows.Forms.ToolStripMenuItem cmb_sortingbyname;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem cmb_addnew;
         private System.Windows.Forms.ToolStripMenuItem cmb_update;
         private System.Windows.Forms.ToolStripMenuItem cmb_delete;
-        private System.Windows.Forms.ToolStripMenuItem السعرToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cmb_sortingbyprice;
+        private System.Windows.Forms.ToolStripMenuItem cmb_refresh;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }

@@ -30,18 +30,16 @@ namespace Cafe_Management_System.Forms.Services.frms
             _SystemInfo = cls_SystemInfo.GetSystemInfo();
         }
 
-        void _LoadOptions()
+        void _LoadOptions(DataView dv)
         {
 
             dgv_options.Rows.Clear();
 
-            int Counter = 1;
-
-            foreach (DataRow row in _Options.Rows)
+            for (int i = 0; i < dv.Count; i++)
             {
 
-                dgv_options.Rows.Add(Counter++.ToString(), row["OptionName"], Convert.ToInt32(row["OptionPrice"]), row["ServiceName"],
-                    row["OptionID"], row["OptionValue"]);
+                dgv_options.Rows.Add((i + 1).ToString(), dv[i]["OptionName"], Convert.ToInt32(dv[i]["OptionPrice"]), dv[i]["ServiceName"],
+                    dv[i]["OptionID"], dv[i]["OptionValue"]);
 
             }
 
@@ -51,7 +49,7 @@ namespace Cafe_Management_System.Forms.Services.frms
         {
 
             _Options = cls_Options.GetOptions(_Service.ServiceID);
-            _LoadOptions();
+            _LoadOptions(_Options.DefaultView);
 
         }
 
@@ -61,7 +59,7 @@ namespace Cafe_Management_System.Forms.Services.frms
             lbl_pagetitle.Text = "خيارات الخدمة (" + _Service.ServiceName + ")";
             dgv_options.Columns["col_optionprice"].HeaderText += " (" + _SystemInfo.Currency.ToString() + ")";
             _Options = cls_Options.GetOptions(_Service.ServiceID);
-            _LoadOptions();
+            _LoadOptions(_Options.DefaultView);
 
         }
 
@@ -128,6 +126,44 @@ namespace Cafe_Management_System.Forms.Services.frms
             frm.DataBack += _Refresh;
             frm.ShowDialog();
 
+        }
+
+        private void cmb_sortingbyname_Click(object sender, EventArgs e)
+        {
+
+            DataView _dv = _Options.DefaultView;
+
+            char _FirstDigitInFirstRow = dgv_options.Rows[0].Cells["col_optionname"].Value.ToString()[0];
+            char _FirstDigitInLastRow = dgv_options.Rows[dgv_options.Rows.Count - 1].Cells["col_optionname"].Value.ToString()[0];
+
+            _dv.Sort = (_FirstDigitInFirstRow < _FirstDigitInLastRow) ?
+                "OptionName DESC" : "OptionName ASC";
+
+            _LoadOptions(_dv);
+
+        }
+
+        private void cmb_sortingbyprice_Click(object sender, EventArgs e)
+        {
+
+            if (dgv_options.Rows.Count <= 1)
+                return;
+
+            DataView _dv = _Options.DefaultView;
+
+            float _FirstPriceInFirstRow = (float)Convert.ToDouble(dgv_options.Rows[0].Cells["col_optionprice"].Value);
+            float _FirstPriceInLastRow = (float)Convert.ToDouble(dgv_options.Rows[dgv_options.Rows.Count - 1].Cells["col_optionprice"].Value);
+
+            _dv.Sort = (_FirstPriceInFirstRow < _FirstPriceInLastRow) ?
+                "OptionPrice DESC" : "OptionPrice ASC";
+
+            _LoadOptions(_dv);
+
+        }
+
+        private void cmb_refresh_Click(object sender, EventArgs e)
+        {
+            _Refresh();
         }
     }
 }

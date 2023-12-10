@@ -14,7 +14,7 @@ namespace Cafe_Management_System.Forms.Requests.UserControls
     public partial class UC_Requests : UserControl
     {
 
-        DataTable _Requests;
+        static DataTable _Requests;
 
         public UC_Requests()
         {
@@ -26,27 +26,26 @@ namespace Cafe_Management_System.Forms.Requests.UserControls
 
         private void UC_Requests_Load(object sender, EventArgs e)
         {
-            _LoadRequests(_Requests);
+            _LoadRequests(_Requests.DefaultView);
         }
 
-        void _LoadRequests(DataTable Requests)
+        private void _LoadRequests(DataView dv)
         {
 
             dgv_requests.Rows.Clear();
-            int Counter = 1;
 
-            foreach (DataRow row in Requests.Rows)
+            for (int i = 0; i < dv.Count; i++)
             {
 
-                string _status = (Convert.ToInt16(row["Status"]) == 2) ? "مكتمل" :
-                    (Convert.ToInt16(row["Status"]) == 1) ? "سيتم المحاسبة لاحقاً" : "في إنتظار المحاسبة..";
+                string _status = (Convert.ToInt16(dv[i]["Status"]) == 2) ? "مكتمل" :
+                   (Convert.ToInt16(dv[i]["Status"]) == 1) ? "سيتم المحاسبة لاحقاً" : "في إنتظار المحاسبة..";
 
-                string _byUserName = (string.IsNullOrEmpty(row["UserName"].ToString())) ?
-                    "لم يتم التعيين بعد" : row["UserName"].ToString();
+                string _byUserName = (string.IsNullOrEmpty(dv[i]["UserName"].ToString())) ?
+                    "لم يتم التعيين بعد" : dv[i]["UserName"].ToString();
 
-                dgv_requests.Rows.Add(Counter++.ToString(), row["ReservationName"],
-                    _status, row["RequestCode"], _byUserName, row["RequestID"],
-                    row["Status"], "أنقر للعرض");
+                dgv_requests.Rows.Add((i + 1).ToString(), dv[i]["ReservationName"],
+                            _status, dv[i]["RequestCode"], _byUserName, dv[i]["RequestID"],
+                            dv[i]["Status"], "أنقر للعرض");
 
             }
 
@@ -56,7 +55,7 @@ namespace Cafe_Management_System.Forms.Requests.UserControls
         {
 
             _Requests = cls_Requests.GetRequests();
-            _LoadRequests(_Requests);
+            _LoadRequests(_Requests.DefaultView);
 
         }
 
@@ -175,5 +174,99 @@ namespace Cafe_Management_System.Forms.Requests.UserControls
 
         }
 
+        private void cb_filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            DataView _dv = _Requests.DefaultView;
+
+            switch (cb_filter.SelectedItem.ToString())
+            {
+
+                case "الكل":
+                    _dv.RowFilter = "";
+                    break;
+
+                case "طلبات المحاسبة":
+                    _dv.RowFilter = "Status = 0";
+                    break;
+
+                case "طلبات سيتم محاسبتها لاحقا":
+                    _dv.RowFilter = "Status = 1";
+                    break;
+
+                case "طلبات تم محاسبتها":
+                    _dv.RowFilter = "Status = 2";
+                    break;
+
+
+            }
+
+            _LoadRequests(_dv);
+            txt_resertvationname.Text = string.Empty;
+
+        }
+
+        private void cmb_reservationname_Click(object sender, EventArgs e)
+        {
+
+            if (dgv_requests.Rows.Count <= 1)
+                return;
+
+            DataView _dv = _Requests.DefaultView;
+
+            char _FirstDigitInFirstRow = dgv_requests.Rows[0].Cells["col_reservationname"].Value.ToString()[0];
+            char _FirstDigitInLastRow = dgv_requests.Rows[dgv_requests.Rows.Count - 1].Cells["col_reservationname"].Value.ToString()[0];
+
+            _dv.Sort = (_FirstDigitInFirstRow < _FirstDigitInLastRow) ?
+                "ReservationName DESC" : "ReservationName ASC";
+
+            _LoadRequests(_dv);
+
+        }
+
+        private void cmb_requeststatus_Click(object sender, EventArgs e)
+        {
+            
+            DataView _dv = _Requests.DefaultView;
+            _dv.Sort = "Status ASC";
+            _LoadRequests(_dv);
+
+        }
+
+        private void txt_resertvationname_TextChanged(object sender, EventArgs e)
+        {
+
+            DataView _dv = _Requests.DefaultView;
+
+            switch (cb_filter.SelectedItem.ToString())
+            {
+
+                case "الكل":
+                    _dv.RowFilter = string.Format("ReservationName LIKE '{0}%'", txt_resertvationname.Text.Trim());
+                    break;
+
+                case "طلبات المحاسبة":
+                    _dv.RowFilter = string.Format("ReservationName LIKE '{0}%' AND Status = 0", txt_resertvationname.Text.Trim());
+                    break;
+
+                case "طلبات سيتم محاسبتها لاحقا":
+                    _dv.RowFilter = string.Format("ReservationName LIKE '{0}%' AND Status = 1", txt_resertvationname.Text.Trim());
+                    break;
+
+                case "طلبات تم محاسبتها":
+                    _dv.RowFilter = string.Format("ReservationName LIKE '{0}%' AND Status = 2", txt_resertvationname.Text.Trim());
+                    break;
+
+
+            }
+
+            _LoadRequests(_dv);
+
+        }
+
+        private void cmb_refresh_Click(object sender, EventArgs e)
+        {
+            _Refresh();
+        }
     }
 }
