@@ -40,12 +40,14 @@
             this.col_serviceid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_serviceimage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
-            this.إضافةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.الاسمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmb_sortby = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmb_sortbyname = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cmb_showoptions = new System.Windows.Forms.ToolStripMenuItem();
             this.cmb_addoption = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.cmb_refresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.cmb_addnew = new System.Windows.Forms.ToolStripMenuItem();
             this.cmb_update = new System.Windows.Forms.ToolStripMenuItem();
             this.cmb_delete = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,9 +55,7 @@
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.cb_filter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.txt_searchtable = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cmb_refresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.txt_servicename = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_services)).BeginInit();
             this.guna2ContextMenuStrip1.SuspendLayout();
             this.pnl_Top.SuspendLayout();
@@ -198,7 +198,7 @@
             this.guna2ContextMenuStrip1.BackColor = System.Drawing.Color.White;
             this.guna2ContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.guna2ContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.إضافةToolStripMenuItem,
+            this.cmb_sortby,
             this.toolStripSeparator1,
             this.cmb_showoptions,
             this.cmb_addoption,
@@ -219,65 +219,78 @@
             this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(241, 279);
+            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(225, 246);
             // 
-            // إضافةToolStripMenuItem
+            // cmb_sortby
             // 
-            this.إضافةToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.الاسمToolStripMenuItem});
-            this.إضافةToolStripMenuItem.Name = "إضافةToolStripMenuItem";
-            this.إضافةToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
-            this.إضافةToolStripMenuItem.Text = "فرز حسب";
+            this.cmb_sortby.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmb_sortbyname});
+            this.cmb_sortby.Name = "cmb_sortby";
+            this.cmb_sortby.Size = new System.Drawing.Size(224, 32);
+            this.cmb_sortby.Text = "فرز حسب";
             // 
-            // الاسمToolStripMenuItem
+            // cmb_sortbyname
             // 
-            this.الاسمToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.الاسمToolStripMenuItem.Name = "الاسمToolStripMenuItem";
-            this.الاسمToolStripMenuItem.Size = new System.Drawing.Size(156, 34);
-            this.الاسمToolStripMenuItem.Text = "الاسم";
+            this.cmb_sortbyname.BackColor = System.Drawing.Color.White;
+            this.cmb_sortbyname.Name = "cmb_sortbyname";
+            this.cmb_sortbyname.Size = new System.Drawing.Size(156, 34);
+            this.cmb_sortbyname.Text = "الاسم";
+            this.cmb_sortbyname.Click += new System.EventHandler(this.cmb_sortbyname_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(237, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // cmb_showoptions
             // 
             this.cmb_showoptions.Name = "cmb_showoptions";
-            this.cmb_showoptions.Size = new System.Drawing.Size(240, 32);
+            this.cmb_showoptions.Size = new System.Drawing.Size(224, 32);
             this.cmb_showoptions.Text = "عرض الخيارات";
             this.cmb_showoptions.Click += new System.EventHandler(this.cmb_showoptions_Click);
             // 
             // cmb_addoption
             // 
             this.cmb_addoption.Name = "cmb_addoption";
-            this.cmb_addoption.Size = new System.Drawing.Size(240, 32);
+            this.cmb_addoption.Size = new System.Drawing.Size(224, 32);
             this.cmb_addoption.Text = "إضافة خيارات";
             this.cmb_addoption.Click += new System.EventHandler(this.cmb_addoption_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(237, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(221, 6);
+            // 
+            // cmb_refresh
+            // 
+            this.cmb_refresh.Name = "cmb_refresh";
+            this.cmb_refresh.Size = new System.Drawing.Size(224, 32);
+            this.cmb_refresh.Text = "تحديث";
+            this.cmb_refresh.Click += new System.EventHandler(this.cmb_refresh_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(221, 6);
             // 
             // cmb_addnew
             // 
             this.cmb_addnew.Name = "cmb_addnew";
-            this.cmb_addnew.Size = new System.Drawing.Size(240, 32);
+            this.cmb_addnew.Size = new System.Drawing.Size(224, 32);
             this.cmb_addnew.Text = "إضافة خدمة جديدة";
             this.cmb_addnew.Click += new System.EventHandler(this.cmb_addnew_Click);
             // 
             // cmb_update
             // 
             this.cmb_update.Name = "cmb_update";
-            this.cmb_update.Size = new System.Drawing.Size(240, 32);
+            this.cmb_update.Size = new System.Drawing.Size(224, 32);
             this.cmb_update.Text = "تعديل";
             this.cmb_update.Click += new System.EventHandler(this.cmb_update_Click);
             // 
             // cmb_delete
             // 
             this.cmb_delete.Name = "cmb_delete";
-            this.cmb_delete.Size = new System.Drawing.Size(240, 32);
+            this.cmb_delete.Size = new System.Drawing.Size(224, 32);
             this.cmb_delete.Text = "حذف";
             this.cmb_delete.Click += new System.EventHandler(this.cmb_delete_Click);
             // 
@@ -286,7 +299,7 @@
             this.pnl_Top.Controls.Add(this.guna2VSeparator1);
             this.pnl_Top.Controls.Add(this.cb_filter);
             this.pnl_Top.Controls.Add(this.guna2Button1);
-            this.pnl_Top.Controls.Add(this.txt_searchtable);
+            this.pnl_Top.Controls.Add(this.txt_servicename);
             this.pnl_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Top.Location = new System.Drawing.Point(0, 0);
             this.pnl_Top.Name = "pnl_Top";
@@ -320,6 +333,7 @@
             this.cb_filter.Size = new System.Drawing.Size(225, 36);
             this.cb_filter.TabIndex = 13;
             this.cb_filter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cb_filter.SelectedIndexChanged += new System.EventHandler(this.cb_filter_SelectedIndexChanged);
             // 
             // guna2Button1
             // 
@@ -340,41 +354,30 @@
             this.guna2Button1.Tag = "1";
             this.guna2Button1.Text = "بحث";
             // 
-            // txt_searchtable
+            // txt_servicename
             // 
-            this.txt_searchtable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_searchtable.BorderRadius = 4;
-            this.txt_searchtable.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_searchtable.DefaultText = "";
-            this.txt_searchtable.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_searchtable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_searchtable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_searchtable.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_searchtable.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_searchtable.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_searchtable.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_searchtable.Location = new System.Drawing.Point(919, 10);
-            this.txt_searchtable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_searchtable.Name = "txt_searchtable";
-            this.txt_searchtable.PasswordChar = '\0';
-            this.txt_searchtable.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_searchtable.PlaceholderText = "أسم الخدمة";
-            this.txt_searchtable.SelectedText = "";
-            this.txt_searchtable.Size = new System.Drawing.Size(225, 48);
-            this.txt_searchtable.TabIndex = 11;
-            this.txt_searchtable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // cmb_refresh
-            // 
-            this.cmb_refresh.Name = "cmb_refresh";
-            this.cmb_refresh.Size = new System.Drawing.Size(240, 32);
-            this.cmb_refresh.Text = "تحديث";
-            this.cmb_refresh.Click += new System.EventHandler(this.cmb_refresh_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(237, 6);
+            this.txt_servicename.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_servicename.BorderRadius = 4;
+            this.txt_servicename.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_servicename.DefaultText = "";
+            this.txt_servicename.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_servicename.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_servicename.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_servicename.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_servicename.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_servicename.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_servicename.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_servicename.Location = new System.Drawing.Point(919, 10);
+            this.txt_servicename.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_servicename.Name = "txt_servicename";
+            this.txt_servicename.PasswordChar = '\0';
+            this.txt_servicename.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txt_servicename.PlaceholderText = "أسم الخدمة";
+            this.txt_servicename.SelectedText = "";
+            this.txt_servicename.Size = new System.Drawing.Size(225, 48);
+            this.txt_servicename.TabIndex = 11;
+            this.txt_servicename.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txt_servicename.TextChanged += new System.EventHandler(this.txt_searchtable_TextChanged);
             // 
             // UC_Services
             // 
@@ -397,8 +400,8 @@
 
         private Guna.UI2.WinForms.Guna2DataGridView dgv_services;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem إضافةToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem الاسمToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cmb_sortby;
+        private System.Windows.Forms.ToolStripMenuItem cmb_sortbyname;
         private System.Windows.Forms.ToolStripMenuItem cmb_showoptions;
         private System.Windows.Forms.ToolStripMenuItem cmb_addnew;
         private System.Windows.Forms.ToolStripMenuItem cmb_update;
@@ -410,7 +413,7 @@
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
         private Guna.UI2.WinForms.Guna2ComboBox cb_filter;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2TextBox txt_searchtable;
+        private Guna.UI2.WinForms.Guna2TextBox txt_servicename;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_servicename;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_servicedescription;

@@ -17,103 +17,25 @@ namespace Cafe_Management_System.Forms.Tables.UserControls
     {
 
         DataTable _Tables;
-        DataView _ReservationsTables;
-        DataView _NotReservationsTables;
 
         public UC_Tables()
         {
             InitializeComponent();
+            _Tables = cls_Tables.GetTables();
         }
 
-        void _LoadTables()
+        void _LoadTables(DataView dv)
         {
 
             flp_body.Controls.Clear();
 
-            _Tables = cls_Tables.GetTable();
-
-            _ReservationsTables = _Tables.DefaultView;
-            _ReservationsTables.RowFilter = "TableStatus = 1";
-
-            _NotReservationsTables = _Tables.DefaultView;
-            _NotReservationsTables.RowFilter = "TableStatus = 0";
-
-            switch (cb_filter.SelectedItem.ToString())
+            for (int i = 0; i < dv.Count; i++)
             {
 
-                case "الكل":
-                    _LoadAllTables();
-                    return;
-
-                case "الطاولات المتاحة":
-                    _LoadReservationsTables();
-                    return;
-
-                case "الطاولات غير المتاحة":
-                    _LoadNotReservationsTables();
-                    return;
-                
-            }
-
-
-        }
-
-        void _LoadAllTables()
-        {
-
-            foreach (DataRow row in _Tables.Rows)
-            {
-
-                int _tableid = Convert.ToInt32(row["TableID"]);
-                string _tablename = row["TableName"].ToString();
-                string _tablepassword = row["TablePassword"].ToString();
-                UC_Table.EN_TableStatus _tablestatus = (Convert.ToBoolean(row["TableStatus"])) ?
-                    UC_Table.EN_TableStatus.Reservation : UC_Table.EN_TableStatus.NotReservation;
-
-                UC_Table uc = new UC_Table(_tableid, _tablename, _tablepassword, _tablestatus);
-                uc.DataBack += _Refresh;
-                uc.Width = (this.Width / 3) - 30;
-                flp_body.Controls.Add(uc);
-
-            }
-
-        }
-
-        void _LoadReservationsTables()
-        {
-
-            // filter on _tables
-
-            foreach (DataRow row in _ReservationsTables.ToTable().Rows)
-            {
-
-                int _tableid = Convert.ToInt32(row["TableID"]);
-                string _tablename = row["TableName"].ToString();
-                string _tablepassword = row["TablePassword"].ToString();
-                UC_Table.EN_TableStatus _tablestatus = (Convert.ToBoolean(row["TableStatus"])) ?
-                    UC_Table.EN_TableStatus.Reservation : UC_Table.EN_TableStatus.NotReservation;
-
-                UC_Table uc = new UC_Table(_tableid, _tablename, _tablepassword, _tablestatus);
-                uc.DataBack += _Refresh;
-                uc.Width = (this.Width / 3) - 30;
-                flp_body.Controls.Add(uc);
-
-            }
-
-        }
-
-        void _LoadNotReservationsTables()
-        {
-
-            // filter on _tables
-
-            foreach (DataRow row in _NotReservationsTables.ToTable().Rows)
-            {
-
-                int _tableid = Convert.ToInt32(row["TableID"]);
-                string _tablename = row["TableName"].ToString();
-                string _tablepassword = row["TablePassword"].ToString();
-                UC_Table.EN_TableStatus _tablestatus = (Convert.ToBoolean(row["TableStatus"])) ?
+                int _tableid = Convert.ToInt32(dv[i]["TableID"]);
+                string _tablename = dv[i]["TableName"].ToString();
+                string _tablepassword = dv[i]["TablePassword"].ToString();
+                UC_Table.EN_TableStatus _tablestatus = (Convert.ToBoolean(dv[i]["TableStatus"])) ?
                     UC_Table.EN_TableStatus.Reservation : UC_Table.EN_TableStatus.NotReservation;
 
                 UC_Table uc = new UC_Table(_tableid, _tablename, _tablepassword, _tablestatus);
@@ -127,18 +49,20 @@ namespace Cafe_Management_System.Forms.Tables.UserControls
 
         void _Refresh()
         {
-            
+
+            _Tables = cls_Tables.GetTables();
+            _LoadTables(_Tables.DefaultView);
+
             txt_searchtable.Text = string.Empty;
-            cb_filter.SelectedIndex = 0;
-            _LoadTables();
+
+            if (cb_filter.Items.Count > 0)
+                cb_filter.SelectedIndex = 0;
 
         }
 
         private void UC_Tables_Load(object sender, EventArgs e)
         {
-
-            _LoadTables();
-
+            _LoadTables(_Tables.DefaultView);
         }
 
         private void flp_body_SizeChanged(object sender, EventArgs e)
@@ -162,13 +86,54 @@ namespace Cafe_Management_System.Forms.Tables.UserControls
 
         private void cb_filter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _LoadTables();
+
+            DataView _dv = _Tables.DefaultView;
+
+            switch (cb_filter.Text.Trim())
+            {
+
+                case "الكل":
+                    _dv.RowFilter = "";
+                    break;
+
+                case "الطاولات المتاحة":
+                    _dv.RowFilter = string.Format("TableStatus = {0}", (byte)cls_Tables.EN_TableStatus.NotReservation);
+                    break;
+
+                case "الطاولات غير المتاحة":
+                    _dv.RowFilter = string.Format("TableStatus = {0}", (byte)cls_Tables.EN_TableStatus.Reservation);
+                    break;
+
+            }
+
+            _LoadTables(_dv);
+            txt_searchtable.Text = string.Empty;
+
         }
 
         private void txt_searchtable_TextChanged(object sender, EventArgs e)
         {
 
+            DataView _dv = _Tables.DefaultView;
 
+            switch (cb_filter.Text.Trim())
+            {
+
+                case "الكل":
+                    _dv.RowFilter = string.Format("TableName LIKE '%{0}%'", txt_searchtable.Text.Trim());
+                    break;
+
+                case "الطاولات المتاحة":
+                    _dv.RowFilter = string.Format("TableStatus = {0} AND TableName LIKE '%{1}%'", (byte)cls_Tables.EN_TableStatus.NotReservation, txt_searchtable.Text.Trim());
+                    break;
+
+                case "الطاولات غير المتاحة":
+                    _dv.RowFilter = string.Format("TableStatus = {0} AND TableName LIKE '%{1}%'", (byte)cls_Tables.EN_TableStatus.Reservation, txt_searchtable.Text.Trim());
+                    break;
+
+            }
+
+            _LoadTables(_dv);
 
         }
     }

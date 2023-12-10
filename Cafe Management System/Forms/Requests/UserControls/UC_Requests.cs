@@ -177,6 +177,9 @@ namespace Cafe_Management_System.Forms.Requests.UserControls
         private void cb_filter_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            if (dgv_requests.Rows.Count <= 0)
+                return;
+
             DataView _dv = _Requests.DefaultView;
 
             switch (cb_filter.SelectedItem.ToString())

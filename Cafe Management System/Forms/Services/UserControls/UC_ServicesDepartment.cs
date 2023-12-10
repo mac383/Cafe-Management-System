@@ -28,22 +28,20 @@ namespace Cafe_Management_System.Forms.Services.UserControls
         private void UC_ServicesDepartment_Load(object sender, EventArgs e)
         {
 
-            _LoadDepartments(_Departments);
+            _LoadDepartments(_Departments.DefaultView);
 
         }
 
-        void _LoadDepartments(DataTable Departments)
+        void _LoadDepartments(DataView dv)
         {
 
             dgv_servicesdepartments.Rows.Clear();
 
-            int _counter = 1;
-
-            foreach (DataRow row in Departments.Rows)
+            for (int i = 0; i < dv.Count; i++)
             {
 
-                dgv_servicesdepartments.Rows.Add(_counter++.ToString(), row["DepartmentName"],
-                    row["COUNTOFSERVICES"], row["DepartmentID"], row["DepartmentImage"]);
+                dgv_servicesdepartments.Rows.Add((i + 1).ToString(), dv[i]["DepartmentName"],
+                    dv[i]["COUNTOFSERVICES"], dv[i]["DepartmentID"], dv[i]["DepartmentImage"]);
 
             }
 
@@ -52,7 +50,7 @@ namespace Cafe_Management_System.Forms.Services.UserControls
         void _Refresh()
         {
             _Departments = cls_ServicesDepartments.GetDepartments();
-            _LoadDepartments(_Departments);
+            _LoadDepartments(_Departments.DefaultView);
         }
 
         private void cmb_addnew_Click(object sender, EventArgs e)
@@ -131,6 +129,31 @@ namespace Cafe_Management_System.Forms.Services.UserControls
                 Convert.ToString(dgv_servicesdepartments.SelectedRows[0].Cells["col_departmentimage"].Value));
             frm.DataBack += _Refresh;
             frm.ShowDialog();
+        }
+
+        private void cmb_refresh_Click(object sender, EventArgs e)
+        {
+            _Refresh();
+        }
+
+        private void cmb_sortbydepartmentname_Click(object sender, EventArgs e)
+        {
+
+            if (dgv_servicesdepartments.Rows.Count <= 1)
+                return;
+
+            DataView _dv = _Departments.DefaultView;
+
+            char _FirstDigitInFirstRow = dgv_servicesdepartments.Rows[0].Cells["col_DepartmentName"].Value.ToString().Trim()[0];
+            char _FirstDigitInLastRow = dgv_servicesdepartments.Rows[dgv_servicesdepartments.Rows.Count - 1].Cells["col_DepartmentName"].Value.ToString().Trim()[0];
+
+            _dv.Sort = (_FirstDigitInFirstRow < _FirstDigitInLastRow) ?
+                    string.Format("DepartmentName DESC")
+                :
+                    string.Format("DepartmentName ASC");
+
+            _LoadDepartments(_dv);
+
         }
     }
 }

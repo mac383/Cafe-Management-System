@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Cafe_Management_System.Forms.Tables.UserControls;
+using Cafe_Management_System.Forms.Requests.UserControls;
 
 namespace Cafe_Management_System.Forms.Services.UserControls
 {
@@ -28,7 +29,7 @@ namespace Cafe_Management_System.Forms.Services.UserControls
         private void UC_Services_Load(object sender, EventArgs e)
         {
             _LoadDepartments();
-            _LoadServices(_Services);
+            _LoadServices(_Services.DefaultView);
         }
 
         void _LoadDepartments()
@@ -45,24 +46,22 @@ namespace Cafe_Management_System.Forms.Services.UserControls
 
         }
 
-        void _LoadServices(DataTable Services)
+        void _LoadServices(DataView dv)
         {
 
             dgv_services.Rows.Clear();
 
-            int Counter = 1;
-
-            foreach (DataRow row in _Services.Rows)
+            for (int i = 0; i < dv.Count; i++)
             {
 
-                string OptionsCountColumn = (Convert.ToInt32(row["COUNTOFOPTIONS"]) > 0) ?
-                    row["COUNTOFOPTIONS"].ToString() + " " + "(انقر للعرض)"
+                string OptionsCountColumn = (Convert.ToInt32(dv[i]["COUNTOFOPTIONS"]) > 0) ?
+                    dv[i]["COUNTOFOPTIONS"].ToString() + " " + "(انقر للعرض)"
                     :
-                    row["COUNTOFOPTIONS"].ToString() + " " + "(لا يوجد خيارات)";
+                    dv[i]["COUNTOFOPTIONS"].ToString() + " " + "(لا يوجد خيارات)";
 
-                dgv_services.Rows.Add(Counter++.ToString(), row["ServiceName"], row["ServiceDescription"],
-                    row["DepartmentName"], OptionsCountColumn, row["ServiceID"],
-                    row["ServiceImage"]);
+                dgv_services.Rows.Add((i + 1).ToString(), dv[i]["ServiceName"], dv[i]["ServiceDescription"],
+                    dv[i]["DepartmentName"], OptionsCountColumn, dv[i]["ServiceID"],
+                    dv[i]["ServiceImage"]);
 
             }
 
@@ -70,8 +69,15 @@ namespace Cafe_Management_System.Forms.Services.UserControls
 
         void _Refresh()
         {
+
             _Services = cls_Services.GetServices();
-            _LoadServices(_Services);
+            _LoadServices(_Services.DefaultView);
+
+            txt_servicename.Text = string.Empty;
+
+            if (cb_filter.Items.Count > 0)
+                cb_filter.SelectedIndex = 0;
+
         }
 
         private void cmb_addnew_Click(object sender, EventArgs e)
@@ -202,7 +208,55 @@ namespace Cafe_Management_System.Forms.Services.UserControls
 
         private void cmb_refresh_Click(object sender, EventArgs e)
         {
+            _Refresh();
+        }
+
+        private void cmb_sortbyname_Click(object sender, EventArgs e)
+        {
+
+            if (dgv_services.Rows.Count <= 1)
+                return;
+
+            DataView _dv = _Services.DefaultView;
+
+            char _FirstDigitInFirstRow = dgv_services.Rows[0].Cells["col_servicename"].Value.ToString()[0];
+            char _FirstDigitInLastRow = dgv_services.Rows[dgv_services.Rows.Count - 1].Cells["col_servicename"].Value.ToString()[0];
+
+            _dv.Sort = (_FirstDigitInFirstRow < _FirstDigitInLastRow) ?
+                "ServiceName DESC" : "ServiceName ASC";
+
+            _LoadServices(_dv);
 
         }
+
+        private void txt_searchtable_TextChanged(object sender, EventArgs e)
+        {
+
+            DataView _dv = _Services.DefaultView;
+
+            _dv.RowFilter = (cb_filter.Text.Trim() == "الكل") ?
+                    string.Format("ServiceName LIKE '{0}%'", txt_servicename.Text.Trim())
+                :
+                    string.Format("ServiceName LIKE '{0}%' AND DepartmentName = '{1}'", txt_servicename.Text.Trim(), cb_filter.Text.Trim());
+            _LoadServices(_dv);
+
+        }
+
+        private void cb_filter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (dgv_services.Rows.Count <= 0)
+                return;
+
+            DataView _dv = _Services.DefaultView;
+
+            _dv.RowFilter = (cb_filter.Text.Trim() == "الكل") ?
+                string.Empty : string.Format("DepartmentName = '{0}'", cb_filter.Text.Trim());
+
+            _LoadServices(_dv);
+            txt_servicename.Text = string.Empty;
+
+        }
+
     }
 }

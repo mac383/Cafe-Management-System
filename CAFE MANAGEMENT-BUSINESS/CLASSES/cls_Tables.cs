@@ -26,6 +26,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
             Reservation = 1
         }
 
+
         public EN_TableStatus TableStatus;
 
         public cls_Tables()
@@ -128,7 +129,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
 
         }
 
-        public static DataTable GetTable()
+        public static DataTable GetTables()
         {
             return cls_Tables_D.GetTables();
         }
