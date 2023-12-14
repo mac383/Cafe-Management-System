@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Cafe_Management_System.Forms.Users.UserControls
 {
-    public partial class UC_ServicesAppUsers : UserControl
+    public partial class UC_Users : UserControl
     {
-        public UC_ServicesAppUsers()
+        public UC_Users()
         {
             InitializeComponent();
         }

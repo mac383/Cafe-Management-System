@@ -42,7 +42,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
 
         private cls_Requests(int requestID, int reservationID, short status, string requestCode, int userID)
         {
-
+            
             this.RequestID = requestID;
             this.Reservation = cls_ReservationsTables.Find(reservationID);
             
@@ -51,7 +51,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
 
             this.RequestCode = requestCode;
             this.User = cls_ManagementAppUser.Find(userID);
-
+            
         }
 
         public static bool IsExist(string RequestCode)

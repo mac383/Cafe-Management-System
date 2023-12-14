@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLASSES\cls_ManagementAppUser_D.cs" />
     <Compile Include="CLASSES\cls_Options_D.cs" />
+    <Compile Include="CLASSES\cls_Person_D.cs" />
     <Compile Include="CLASSES\cls_Requests_D.cs" />
     <Compile Include="CLASSES\cls_ReservationsTables_D.cs" />
+    <Compile Include="CLASSES\cls_ServicesAppUser_D.cs" />
     <Compile Include="CLASSES\cls_Services_D.cs" />
     <Compile Include="CLASSES\cls_ServicesDepartments_D.cs" />
     <Compile Include="CLASSES\cls_SystemInfo_D.cs" />

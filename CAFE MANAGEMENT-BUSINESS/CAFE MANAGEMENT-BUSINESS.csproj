@@ -43,9 +43,11 @@
   <ItemGroup>
     <Compile Include="CLASSES\cls_ManagementAppUser.cs" />
     <Compile Include="CLASSES\cls_Options.cs" />
+    <Compile Include="CLASSES\cls_Person.cs" />
     <Compile Include="CLASSES\cls_Requests.cs" />
     <Compile Include="CLASSES\cls_ReservationsTables.cs" />
     <Compile Include="CLASSES\cls_Services.cs" />
+    <Compile Include="CLASSES\cls_ServicesAppUser.cs" />
     <Compile Include="CLASSES\cls_ServicesDepartments.cs" />
     <Compile Include="CLASSES\cls_SystemInfo.cs" />
     <Compile Include="CLASSES\cls_Tables.cs" />

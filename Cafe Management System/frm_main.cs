@@ -125,9 +125,9 @@ namespace Cafe_Management_System
 
         private void btn_users_Click(object sender, EventArgs e)
         {
-            UC_UsersSubButtons uc = new UC_UsersSubButtons();
-            uc.SubButtonClick += _LoadPages;
-            _LoadSubBtns(uc);
+            pnl_btnscontainer.Height = pnl_btnscontainer.MinimumSize.Height;
+            UC_Users uc = new UC_Users();
+            _LoadPages(uc);
         }
 
         private void btn_settings_Click(object sender, EventArgs e)

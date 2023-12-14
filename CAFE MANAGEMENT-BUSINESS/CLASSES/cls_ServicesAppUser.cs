@@ -3,49 +3,42 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
 {
-    public class cls_ManagementAppUser : cls_Person
+    public class cls_ServicesAppUser : cls_Person
     {
 
-        enum EN_Mode { addnew = 1, update = 2 }
+        enum EN_Mode { addnew = 1, update =2 }
         EN_Mode _Mode;
 
         public int UserID { set; get; }
-        public long Permissions { set;get; }
 
-        public cls_ManagementAppUser() : base()
+        public cls_ServicesAppUser() : base()
         {
-
-            this.UserID = -1;
-            this.Permissions = 0;
-
+            UserID = -1;
             this._Mode = EN_Mode.addnew;
-
         }
 
-        public cls_ManagementAppUser(int userID, long permissions, int personID, string firstName,
+        public cls_ServicesAppUser(int userID, int personID, string firstName,
             string secondName, string lastName, bool gender, string address, string userName, string password,
-            DateTime dob,string idNumber, string phone1, string phone2, string personImage) 
+            DateTime dob, string idNumber, string phone1, string phone2, string personImage)
 
-            : base (personID, firstName, secondName, lastName, gender, address, userName,
-                  password, dob, idNumber,phone1, phone2, personImage)
+            : base(personID, firstName, secondName, lastName, gender, address, userName, password, dob, idNumber,
+                  phone1, phone2, personImage)
         {
 
             this.UserID = userID;
-            this.Permissions = permissions;
-
             this._Mode = EN_Mode.update;
 
         }
 
+
         public static bool IsUserHasReferences(int userID)
         {
-            return cls_ManagementAppUser_D.GetCountOfUserReferences(userID) > 0;
+            return cls_ServicesAppUser_D.GetCountOfUserReferences(userID) > 0;
         }
 
         public static bool IsUserExist(string userName)
@@ -65,7 +58,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
         }
 
         public static bool IsUserExistByIDNumber(int userID, string iDNumber)
-        { 
+        {
             int personid = Find(userID).PersonID;
             return (personid > 0) ? IsPersonExistByIDNumber(personid, iDNumber) : false;
         }
@@ -78,71 +71,66 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
         public static bool IsUserExistByPhone(int userID, string Phone)
         {
             int personid = Find(userID).PersonID;
-            return (personid < 0) ? IsPersonExistByPhone(personid, Phone) : false;
+            return (personid > 0) ? IsPersonExistByPhone(personid, Phone) : false;
         }
 
-        public static cls_ManagementAppUser Find(int UserID)
+        public static cls_ServicesAppUser Find(int UserID)
         {
 
             int personid = -1;
-            long permissions = 0;
-
-            if (cls_ManagementAppUser_D.Find(UserID, ref personid, ref permissions))
+            
+            if (cls_ServicesAppUser_D.Find(UserID, ref personid))
             {
 
                 cls_Person person = cls_Person.FindPerson(personid);
-                return (person != null) ? new cls_ManagementAppUser(UserID, permissions, person.PersonID,
-                    person.FirstName, person.SecondName, person.LastName, Convert.ToBoolean(person.Gender),
-                    person.Address, person.UserName, person.Password, person.DOB, person.IDNumber,
-                    person.Phone1, person.Phone2, person.PersonImage) : null;
+
+                return (person != null) ? new cls_ServicesAppUser(UserID, person.PersonID, person.FirstName,
+                    person.SecondName, person.LastName, Convert.ToBoolean(person.Gender), person.Address,
+                    person.UserName, person.Password, person.DOB, person.IDNumber, person.Phone1, 
+                    person.Phone2,person.PersonImage) : null;
             }
 
             return null;
 
         }
 
-        public static cls_ManagementAppUser Find(string UserName)
+        public static cls_ServicesAppUser Find(string UserName)
         {
 
             int userid = -1;
             int personid = -1;
-            long permissions = 0;
 
-            if (cls_ManagementAppUser_D.Find(UserName, ref userid, ref personid, ref permissions))
+            if (cls_ServicesAppUser_D.Find(UserName, ref userid, ref personid))
             {
 
                 cls_Person person = cls_Person.FindPerson(personid);
-                return (person != null) ? new cls_ManagementAppUser(userid, permissions, person.PersonID,
-                    person.FirstName, person.SecondName, person.LastName, Convert.ToBoolean(person.Gender),
-                    person.Address, person.UserName, person.Password, person.DOB, person.IDNumber,
-                    person.Phone1, person.Phone2, person.PersonImage) : null;
+
+                return (person != null) ? new cls_ServicesAppUser(userid, person.PersonID, person.FirstName,
+                    person.SecondName, person.LastName, Convert.ToBoolean(person.Gender), person.Address,
+                    person.UserName, person.Password, person.DOB, person.IDNumber, person.Phone1,
+                    person.Phone2, person.PersonImage) : null;
             }
 
             return null;
 
         }
-
         private bool _AddUser()
         {
 
-            if (this.AddPerson())
-                this.UserID = cls_ManagementAppUser_D.AddUser(this.PersonID, this.Permissions);
-
+            this.UserID = this.AddPerson() ? cls_ServicesAppUser_D.AddUser(this.PersonID) : -1;
             return (this.UserID > 0);
 
         }
-        
+
         private bool _UpdateUser()
         {
-
-            return (this.UpdatePerson()) ? cls_ManagementAppUser_D.UpdateUser(this.UserID, this.Permissions) : false;
-
+            return this.UpdatePerson();
         }
 
         public static bool DeleteUser(int UserID)
         {
             int _PersonID = Find(UserID).PersonID;
-            return cls_ManagementAppUser_D.DeleteUser(UserID) ? DeletePerson(_PersonID) : false;
+            return cls_ServicesAppUser_D.DeleteUser(UserID) ? DeletePerson(_PersonID) : false;
         }
 
         public bool Save()
@@ -172,7 +160,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
 
         public static DataTable GetUsers()
         {
-            return cls_ManagementAppUser_D.GetUsers();
+            return cls_ServicesAppUser.GetUsers();
         }
 
     }
