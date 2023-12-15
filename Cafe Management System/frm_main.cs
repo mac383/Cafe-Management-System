@@ -126,7 +126,7 @@ namespace Cafe_Management_System
         private void btn_users_Click(object sender, EventArgs e)
         {
             pnl_btnscontainer.Height = pnl_btnscontainer.MinimumSize.Height;
-            UC_Users uc = new UC_Users();
+            UC_UsersMainPage uc = new UC_UsersMainPage();
             _LoadPages(uc);
         }
 

@@ -226,7 +226,7 @@ namespace CAFE_MANAGEMENT_DATAACCESS.CLASSES
             DataTable dt = new DataTable();
 
             SqlConnection Connection = cls_Database.Connection();
-            string Query = @"SELECT UserID, Permissions, PersonID, FirstName, SecondName, LastName, Gender, Address, UserName, Password, DOB, 
+            string Query = @"SELECT UserID, Permissions, People.PersonID, FirstName, SecondName, LastName, Gender, Address, UserName, Password, DOB, 
                              IDNumber, Phone1, Phone2, PersonImage
                              FROM ManagementAppUsers INNER JOIN
                              People ON ManagementAppUsers.PersonID = People.PersonID";

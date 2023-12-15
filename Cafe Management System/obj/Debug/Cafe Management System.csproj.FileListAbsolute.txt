@@ -59,4 +59,7 @@ J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe M
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.csproj.CopyComplete
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.exe
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.pdb
-J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_Users.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_UsersMainPage.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_AddUpdateUsers.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_UsersList.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_ShowUserInfo.resources

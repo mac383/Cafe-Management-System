@@ -160,7 +160,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
 
         public static DataTable GetUsers()
         {
-            return cls_ServicesAppUser.GetUsers();
+            return cls_ServicesAppUser_D.GetUsers();
         }
 
     }

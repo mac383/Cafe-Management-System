@@ -143,12 +143,31 @@
     <Compile Include="Forms\Tables\UserControls\UC_Tables.Designer.cs">
       <DependentUpon>UC_Tables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Users\UserControls\UC_Users.cs">
+    <Compile Include="Forms\Users\UserControls\UC_AddUpdateUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Users\UserControls\UC_Users.Designer.cs">
-      <DependentUpon>UC_Users.cs</DependentUpon>
+    <Compile Include="Forms\Users\UserControls\UC_AddUpdateUsers.Designer.cs">
+      <DependentUpon>UC_AddUpdateUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_ShowUserInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_ShowUserInfo.Designer.cs">
+      <DependentUpon>UC_ShowUserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_UsersList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_UsersList.Designer.cs">
+      <DependentUpon>UC_UsersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_UsersMainPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_UsersMainPage.Designer.cs">
+      <DependentUpon>UC_UsersMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UsersEventsArgsClasses\cls_ShowUserEventArgs.cs" />
     <Compile Include="frm_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,8 +216,17 @@
     <EmbeddedResource Include="Forms\Tables\UserControls\UC_Tables.resx">
       <DependentUpon>UC_Tables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Users\UserControls\UC_Users.resx">
-      <DependentUpon>UC_Users.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Users\UserControls\UC_AddUpdateUsers.resx">
+      <DependentUpon>UC_AddUpdateUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserControls\UC_ShowUserInfo.resx">
+      <DependentUpon>UC_ShowUserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserControls\UC_UsersList.resx">
+      <DependentUpon>UC_UsersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserControls\UC_UsersMainPage.resx">
+      <DependentUpon>UC_UsersMainPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>
