@@ -142,7 +142,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
         public static bool DeleteUser(int UserID)
         {
             int _PersonID = Find(UserID).PersonID;
-            return cls_ManagementAppUser_D.DeleteUser(UserID) ? DeletePerson(_PersonID) : false;
+            return IsUserHasReferences(UserID) ? false : cls_ManagementAppUser_D.DeleteUser(UserID) ? DeletePerson(_PersonID) : false;
         }
 
         public bool Save()

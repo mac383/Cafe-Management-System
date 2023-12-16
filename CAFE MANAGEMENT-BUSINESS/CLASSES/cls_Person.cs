@@ -13,7 +13,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
     public class cls_Person
     {
 
-        public enum EN_Gender { male = 0, female = 1}
+        public enum EN_Gender { female = 0, male = 1}
 
         public int PersonID { set; get; }
         public string FirstName { set; get; }

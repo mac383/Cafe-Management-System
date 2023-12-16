@@ -71,6 +71,7 @@ namespace Cafe_Management_System.Forms.Users.UserControls
 
             UC_ShowUserInfo uc = new UC_ShowUserInfo(eventArgs.UserID, eventArgs.UserDepartment);
             uc.OnBackClick += _LoadUsersListPage;
+            uc.OnUpdateClicked += _LoadUpdateUserPage;
             uc.Dock = DockStyle.Fill;
             this.Controls.Add(uc);
 

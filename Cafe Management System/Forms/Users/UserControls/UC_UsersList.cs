@@ -290,5 +290,68 @@ namespace Cafe_Management_System.Forms.Users.UserControls
 
         }
 
+        private void cmb_delete_Click(object sender, EventArgs e)
+        {
+
+            if (dgv_users.SelectedRows.Count <= 0)
+                return;
+
+            int userid = Convert.ToInt32(dgv_users.SelectedRows[0].Cells["col_userid"].Value);
+            string username = dgv_users.SelectedRows[0].Cells["col_username"].Value.ToString().Trim();
+
+            switch (dgv_users.SelectedRows[0].Cells["col_department"].Value)
+            {
+
+                case "الإدارة":
+
+                    if (MessageBox.Show("هل متأكد من حذف المستخدم؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly) == DialogResult.Yes)
+                    {
+                        if (cls_ManagementAppUser.IsUserExist(username))
+                        {
+
+                            if (cls_ManagementAppUser.DeleteUser(userid))
+                            {
+                                MessageBox.Show("تم الحذف بنجاح", "اكتمل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                                _Refresh();
+                            }
+                            else
+                                MessageBox.Show("حذث خطأ اثناء الحذف, قد يكون للمستخدم بيانات اخرئ مرتبطة بحسابه في النظام\nتأكد من حذفها تم حاول مجدداً.", "لم يتم الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                        }
+                        else
+                        {
+                            MessageBox.Show("لم يتم ايجاد المستخدم", "حذف مستخدم", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                        }
+                    }
+                    break;
+
+                case "الخدمات":
+
+                    if (MessageBox.Show("هل متأكد من حذف المستخدم؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly) == DialogResult.Yes)
+                    {
+                        if (cls_ServicesAppUser.IsUserExist(username))
+                        {
+
+                            if (cls_ServicesAppUser.DeleteUser(userid))
+                            {
+                                MessageBox.Show("تم الحذف بنجاح", "اكتمل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                                _Refresh();
+                            }
+                            else
+                                MessageBox.Show("حذث خطأ اثناء الحذف, قد يكون للمستخدم بيانات اخرئ مرتبطة بحسابه في النظام\nتأكد من حذفها تم حاول مجدداً.", "لم يتم الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                        }
+                        else
+                        {
+                            MessageBox.Show("لم يتم ايجاد المستخدم", "حذف مستخدم", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                        }
+                    }
+
+                    break;
+
+            }
+
+
+
+        }
+
     }
 }
