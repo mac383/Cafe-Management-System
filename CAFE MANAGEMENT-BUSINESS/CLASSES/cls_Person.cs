@@ -48,6 +48,27 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
 
         }
 
+        protected cls_Person(string firstName, string secondName, string lastName, bool gender,
+            string address, string userName, DateTime dOB, string iDNumber, string phone1,
+            string phone2, string personImage)
+        {
+
+            PersonID = FindPerson(userName).PersonID;
+            FirstName = firstName;
+            SecondName = secondName;
+            LastName = lastName;
+            Gender = (gender) ? EN_Gender.male : EN_Gender.female;
+            Address = address;
+            UserName = userName;
+            Password = null;
+            DOB = dOB;
+            IDNumber = iDNumber;
+            Phone1 = phone1;
+            Phone2 = phone2;
+            PersonImage = personImage;
+
+        }
+
         protected cls_Person(int personID, string firstName, string secondName, string lastName, bool gender,
             string address, string userName, string password, DateTime dOB, string iDNumber, string phone1,
             string phone2, string personImage)
@@ -171,7 +192,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
         {
 
             return cls_Person_D.UpdatePerson(this.PersonID, this.FirstName, this.SecondName, this.LastName,
-                Convert.ToBoolean(this.Gender), this.Address, this.UserName, this.Password, this.DOB,
+                Convert.ToBoolean(this.Gender), this.Address, this.UserName, this.DOB,
                 this.IDNumber, this.Phone1, this.Phone2, this.PersonImage);
 
         }

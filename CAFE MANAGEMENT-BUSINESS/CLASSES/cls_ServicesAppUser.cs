@@ -22,7 +22,20 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
             this._Mode = EN_Mode.addnew;
         }
 
-        public cls_ServicesAppUser(int userID, int personID, string firstName,
+        public cls_ServicesAppUser(int userID, string firstName,
+            string secondName, string lastName, bool gender, string address, string userName,
+            DateTime dob, string idNumber, string phone1, string phone2, string personImage)
+
+            : base(firstName, secondName, lastName, gender, address, userName, dob, idNumber,
+                  phone1, phone2, personImage)
+        {
+
+            this.UserID = userID;
+            this._Mode = EN_Mode.update;
+
+        }
+
+        private cls_ServicesAppUser(int userID, int personID, string firstName,
             string secondName, string lastName, bool gender, string address, string userName, string password,
             DateTime dob, string idNumber, string phone1, string phone2, string personImage)
 

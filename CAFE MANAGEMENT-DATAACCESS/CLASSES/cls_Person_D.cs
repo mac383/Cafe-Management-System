@@ -441,18 +441,16 @@ namespace CAFE_MANAGEMENT_DATAACCESS.CLASSES
         }
 
         public static bool UpdatePerson(int personID, string firstName, string secondName,
-            string lastName, bool gender, string address, string userName, string password,
+            string lastName, bool gender, string address, string userName,
             Nullable<DateTime> dob, string idNumber, string phone1, string phone2, string personImage)
         {
-
-            password = cls_Encryption.Encrypt(password);
 
             int rowsAffected = -1;
             SqlConnection Connection = cls_Database.Connection();
 
             string Query = @"UPDATE People
                              SET FirstName = @FirstName, SecondName = @SecondName, LastName = @LastName, Gender = @Gender,
-                             Address = @Address, UserName = @UserName, Password = @Password, DOB = @DOB, IDNumber = @IDNumber,
+                             Address = @Address, UserName = @UserName, DOB = @DOB, IDNumber = @IDNumber,
                              Phone1 = @Phone1, Phone2 = @Phone2, PersonImage = @PersonImage
                              WHERE PersonID = @PersonID";
 
@@ -470,7 +468,6 @@ namespace CAFE_MANAGEMENT_DATAACCESS.CLASSES
             Command.Parameters.AddWithValue("@Gender", gender);
             Command.Parameters.AddWithValue("@Address", address);
             Command.Parameters.AddWithValue("@UserName", userName);
-            Command.Parameters.AddWithValue("@Password", password);
             Command.Parameters.AddWithValue("@DOB", dob);
 
             if (string.IsNullOrEmpty(idNumber))

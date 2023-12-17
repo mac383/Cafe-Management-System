@@ -11,7 +11,13 @@ namespace Cafe_Management_System.GLOBAL_CLASSES
     public class cls_util
     {
 
-        public enum EN_Directory { DepartmentsImages = 1, ServicesImages = 2}
+        public enum EN_Directory 
+        {
+            DepartmentsImages = 1,
+            ServicesImages = 2, 
+            ManagementAppUsersImages = 3, 
+            ServicesAppUsersImages = 4
+        }
 
         public static string GenderateGUID()
         {
@@ -65,6 +71,14 @@ namespace Cafe_Management_System.GLOBAL_CLASSES
 
                 case EN_Directory.ServicesImages:
                     DestinationFolder = @"C:\Cafe-Services-Images\";
+                    break;
+
+                case EN_Directory.ManagementAppUsersImages:
+                    DestinationFolder = @"C:\Cafe-Management-App-Users-Images\";
+                    break;
+
+                case EN_Directory.ServicesAppUsersImages:
+                    DestinationFolder = @"C:\Cafe-Services-App-Users-Images\";
                     break;
 
             }

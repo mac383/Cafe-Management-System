@@ -93,9 +93,9 @@
             this.lbl_showpermissions.BackColor = System.Drawing.Color.Transparent;
             this.lbl_showpermissions.Font = new System.Drawing.Font("Tahoma", 9F);
             this.lbl_showpermissions.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lbl_showpermissions.Location = new System.Drawing.Point(244, 321);
+            this.lbl_showpermissions.Location = new System.Drawing.Point(244, 314);
             this.lbl_showpermissions.Name = "lbl_showpermissions";
-            this.lbl_showpermissions.Size = new System.Drawing.Size(87, 14);
+            this.lbl_showpermissions.Size = new System.Drawing.Size(130, 22);
             this.lbl_showpermissions.TabIndex = 24;
             this.lbl_showpermissions.TabStop = true;
             this.lbl_showpermissions.Text = "عرض الصلاحيات";
@@ -120,7 +120,7 @@
             this.label12.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label12.Location = new System.Drawing.Point(425, 561);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 23);
+            this.label12.Size = new System.Drawing.Size(121, 34);
             this.label12.TabIndex = 22;
             this.label12.Text = "الهاتف 2:";
             // 
@@ -141,7 +141,7 @@
             this.label10.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label10.Location = new System.Drawing.Point(425, 479);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 23);
+            this.label10.Size = new System.Drawing.Size(121, 34);
             this.label10.TabIndex = 20;
             this.label10.Text = "الهاتف 1:";
             // 
@@ -162,7 +162,7 @@
             this.label8.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label8.Location = new System.Drawing.Point(951, 479);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 23);
+            this.label8.Size = new System.Drawing.Size(140, 34);
             this.label8.TabIndex = 18;
             this.label8.Text = "رقم الهوية:";
             // 
@@ -183,7 +183,7 @@
             this.label6.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label6.Location = new System.Drawing.Point(936, 397);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 23);
+            this.label6.Size = new System.Drawing.Size(163, 34);
             this.label6.TabIndex = 16;
             this.label6.Text = "تاريخ الميلاد:";
             // 
@@ -204,7 +204,7 @@
             this.label4.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label4.Location = new System.Drawing.Point(977, 561);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 23);
+            this.label4.Size = new System.Drawing.Size(102, 34);
             this.label4.TabIndex = 14;
             this.label4.Text = "العنوان:";
             // 
@@ -225,7 +225,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 14F);
             this.label1.Location = new System.Drawing.Point(435, 397);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 23);
+            this.label1.Size = new System.Drawing.Size(105, 34);
             this.label1.TabIndex = 12;
             this.label1.Text = "الجنس:";
             // 
@@ -234,9 +234,9 @@
             this.lbl_department.AutoSize = true;
             this.lbl_department.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.lbl_department.ForeColor = System.Drawing.Color.Red;
-            this.lbl_department.Location = new System.Drawing.Point(158, 321);
+            this.lbl_department.Location = new System.Drawing.Point(158, 314);
             this.lbl_department.Name = "lbl_department";
-            this.lbl_department.Size = new System.Drawing.Size(35, 14);
+            this.lbl_department.Size = new System.Drawing.Size(50, 22);
             this.lbl_department.TabIndex = 11;
             this.lbl_department.Text = "????";
             // 
@@ -308,7 +308,7 @@
             this.lbl_userfullname.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
             this.lbl_userfullname.Location = new System.Drawing.Point(510, 157);
             this.lbl_userfullname.Name = "lbl_userfullname";
-            this.lbl_userfullname.Size = new System.Drawing.Size(434, 28);
+            this.lbl_userfullname.Size = new System.Drawing.Size(434, 43);
             this.lbl_userfullname.TabIndex = 4;
             this.lbl_userfullname.Text = "???? ???? ????";
             this.lbl_userfullname.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

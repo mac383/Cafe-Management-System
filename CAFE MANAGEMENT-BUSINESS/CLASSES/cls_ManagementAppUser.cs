@@ -28,7 +28,22 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
 
         }
 
-        public cls_ManagementAppUser(int userID, long permissions, int personID, string firstName,
+        public cls_ManagementAppUser(int userID, long permissions, string firstName,
+            string secondName, string lastName, bool gender, string address, string userName,
+            DateTime dob, string idNumber, string phone1, string phone2, string personImage)
+
+            : base(firstName, secondName, lastName, gender, address, userName,
+                 dob, idNumber, phone1, phone2, personImage)
+        {
+
+            this.UserID = userID;
+            this.Permissions = permissions;
+
+            this._Mode = EN_Mode.update;
+
+        }
+
+        private cls_ManagementAppUser(int userID, long permissions, int personID, string firstName,
             string secondName, string lastName, bool gender, string address, string userName, string password,
             DateTime dob,string idNumber, string phone1, string phone2, string personImage) 
 

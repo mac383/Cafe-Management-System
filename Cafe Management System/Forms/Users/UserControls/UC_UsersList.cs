@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Cafe_Management_System.Forms.Users.UserControls
 {
@@ -298,6 +299,7 @@ namespace Cafe_Management_System.Forms.Users.UserControls
 
             int userid = Convert.ToInt32(dgv_users.SelectedRows[0].Cells["col_userid"].Value);
             string username = dgv_users.SelectedRows[0].Cells["col_username"].Value.ToString().Trim();
+            string userimage;
 
             switch (dgv_users.SelectedRows[0].Cells["col_department"].Value)
             {
@@ -309,8 +311,23 @@ namespace Cafe_Management_System.Forms.Users.UserControls
                         if (cls_ManagementAppUser.IsUserExist(username))
                         {
 
+                            userimage = cls_ManagementAppUser.Find(userid).PersonImage;
+
                             if (cls_ManagementAppUser.DeleteUser(userid))
                             {
+
+                                if (File.Exists(userimage))
+                                {
+                                    try
+                                    {
+                                        File.Delete(userimage);
+                                    }
+                                    catch
+                                    {
+                                        MessageBox.Show($"تبقئ للمستخدم صورة يمكنك حذفها\nالصورة في المسار\n{userimage}.");
+                                    }
+                                }
+
                                 MessageBox.Show("تم الحذف بنجاح", "اكتمل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                                 _Refresh();
                             }
@@ -323,7 +340,7 @@ namespace Cafe_Management_System.Forms.Users.UserControls
                         }
                     }
                     break;
-
+            
                 case "الخدمات":
 
                     if (MessageBox.Show("هل متأكد من حذف المستخدم؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly) == DialogResult.Yes)
@@ -331,25 +348,40 @@ namespace Cafe_Management_System.Forms.Users.UserControls
                         if (cls_ServicesAppUser.IsUserExist(username))
                         {
 
+                            userimage = cls_ServicesAppUser.Find(userid).PersonImage;
+
                             if (cls_ServicesAppUser.DeleteUser(userid))
                             {
+
+                                if (File.Exists(userimage))
+                                {
+                                    try
+                                    {
+                                        File.Delete(userimage);
+                                    }
+                                    catch
+                                    {
+                                        MessageBox.Show($"تبقئ للمستخدم صورة يمكنك حذفها\nالصورة في المسار\n{userimage}.");
+                                    }
+                                }
+
                                 MessageBox.Show("تم الحذف بنجاح", "اكتمل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                                 _Refresh();
+
                             }
                             else
                                 MessageBox.Show("حذث خطأ اثناء الحذف, قد يكون للمستخدم بيانات اخرئ مرتبطة بحسابه في النظام\nتأكد من حذفها تم حاول مجدداً.", "لم يتم الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+
                         }
+
                         else
                         {
                             MessageBox.Show("لم يتم ايجاد المستخدم", "حذف مستخدم", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                         }
                     }
-
-                    break;
+                        break;
 
             }
-
-
 
         }
 
