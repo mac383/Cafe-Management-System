@@ -107,9 +107,9 @@
             // 
             this.lbl_phone2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_phone2.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.lbl_phone2.Location = new System.Drawing.Point(257, 561);
+            this.lbl_phone2.Location = new System.Drawing.Point(158, 561);
             this.lbl_phone2.Name = "lbl_phone2";
-            this.lbl_phone2.Size = new System.Drawing.Size(137, 35);
+            this.lbl_phone2.Size = new System.Drawing.Size(234, 35);
             this.lbl_phone2.TabIndex = 23;
             this.lbl_phone2.Text = "????";
             // 
@@ -128,9 +128,9 @@
             // 
             this.lbl_phone1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_phone1.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.lbl_phone1.Location = new System.Drawing.Point(257, 479);
+            this.lbl_phone1.Location = new System.Drawing.Point(158, 479);
             this.lbl_phone1.Name = "lbl_phone1";
-            this.lbl_phone1.Size = new System.Drawing.Size(137, 35);
+            this.lbl_phone1.Size = new System.Drawing.Size(234, 35);
             this.lbl_phone1.TabIndex = 21;
             this.lbl_phone1.Text = "????";
             // 
@@ -149,9 +149,9 @@
             // 
             this.lbl_idnumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_idnumber.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.lbl_idnumber.Location = new System.Drawing.Point(777, 479);
+            this.lbl_idnumber.Location = new System.Drawing.Point(680, 479);
             this.lbl_idnumber.Name = "lbl_idnumber";
-            this.lbl_idnumber.Size = new System.Drawing.Size(137, 35);
+            this.lbl_idnumber.Size = new System.Drawing.Size(234, 35);
             this.lbl_idnumber.TabIndex = 19;
             this.lbl_idnumber.Text = "????";
             // 
@@ -170,9 +170,9 @@
             // 
             this.lbl_dob.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_dob.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.lbl_dob.Location = new System.Drawing.Point(777, 397);
+            this.lbl_dob.Location = new System.Drawing.Point(680, 397);
             this.lbl_dob.Name = "lbl_dob";
-            this.lbl_dob.Size = new System.Drawing.Size(137, 35);
+            this.lbl_dob.Size = new System.Drawing.Size(234, 35);
             this.lbl_dob.TabIndex = 17;
             this.lbl_dob.Text = "????";
             // 
@@ -191,9 +191,9 @@
             // 
             this.lbl_address.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbl_address.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.lbl_address.Location = new System.Drawing.Point(777, 561);
+            this.lbl_address.Location = new System.Drawing.Point(680, 561);
             this.lbl_address.Name = "lbl_address";
-            this.lbl_address.Size = new System.Drawing.Size(137, 35);
+            this.lbl_address.Size = new System.Drawing.Size(234, 35);
             this.lbl_address.TabIndex = 15;
             this.lbl_address.Text = "????";
             // 
@@ -212,9 +212,9 @@
             // 
             this.lbl_gender.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_gender.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.lbl_gender.Location = new System.Drawing.Point(257, 397);
+            this.lbl_gender.Location = new System.Drawing.Point(158, 397);
             this.lbl_gender.Name = "lbl_gender";
-            this.lbl_gender.Size = new System.Drawing.Size(137, 35);
+            this.lbl_gender.Size = new System.Drawing.Size(234, 35);
             this.lbl_gender.TabIndex = 13;
             this.lbl_gender.Text = "????";
             // 

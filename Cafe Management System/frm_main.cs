@@ -1,7 +1,7 @@
 ﻿using Cafe_Management_System.Forms.Home.UserControls;
 using Cafe_Management_System.Forms.Requests.UserControls;
 using Cafe_Management_System.Forms.Services.UserControls;
-using Cafe_Management_System.Forms.Settings.frms;
+using Cafe_Management_System.Forms.Settings.UserControls;
 using Cafe_Management_System.Forms.Tables.UserControls;
 using Cafe_Management_System.Forms.Users.UserControls;
 using System;
@@ -132,8 +132,11 @@ namespace Cafe_Management_System
 
         private void btn_settings_Click(object sender, EventArgs e)
         {
-            frm_settings frm = new frm_settings();
-            frm.ShowDialog();
+
+            pnl_btnscontainer.Height = pnl_btnscontainer.MinimumSize.Height;
+            UC_Settings uc = new UC_Settings();
+            _LoadPages(uc);
+
         }
     }
 }

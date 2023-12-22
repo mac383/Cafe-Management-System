@@ -1,6 +1,6 @@
 ﻿namespace Cafe_Management_System.Forms.Users.UserControls
 {
-    partial class UC_AddUpdateUsers
+    partial class UC_AddUpdateManagementUsers
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,7 +38,6 @@
             this.txt_secondname = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_lastname = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_username = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbl_department = new System.Windows.Forms.Label();
             this.dtp_dob = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txt_idnumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_address = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,22 +48,15 @@
             this.rb_male = new Guna.UI2.WinForms.Guna2RadioButton();
             this.groupbox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txt_password = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lbl_firstnametoltip = new System.Windows.Forms.Label();
-            this.lbl_secondnametoltip = new System.Windows.Forms.Label();
-            this.lbl_lastnametoltip = new System.Windows.Forms.Label();
-            this.lbl_usernametoltip = new System.Windows.Forms.Label();
-            this.lbl_passwordtoltip = new System.Windows.Forms.Label();
-            this.lbl_idnumbertoltip = new System.Windows.Forms.Label();
-            this.lbl_addresstoltip = new System.Windows.Forms.Label();
-            this.lbl_phone1toltip = new System.Windows.Forms.Label();
-            this.lbl_phone2toltip = new System.Windows.Forms.Label();
             this.btn_save = new Guna.UI2.WinForms.Guna2Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pic_userimage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btn_back = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2GroupBox1.SuspendLayout();
             this.groupbox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_userimage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Separator1
@@ -83,9 +75,9 @@
             this.lbl_showpermissions.BackColor = System.Drawing.Color.Transparent;
             this.lbl_showpermissions.Font = new System.Drawing.Font("Tahoma", 9F);
             this.lbl_showpermissions.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lbl_showpermissions.Location = new System.Drawing.Point(232, 298);
+            this.lbl_showpermissions.Location = new System.Drawing.Point(94, 304);
             this.lbl_showpermissions.Name = "lbl_showpermissions";
-            this.lbl_showpermissions.Size = new System.Drawing.Size(107, 14);
+            this.lbl_showpermissions.Size = new System.Drawing.Size(159, 22);
             this.lbl_showpermissions.TabIndex = 47;
             this.lbl_showpermissions.TabStop = true;
             this.lbl_showpermissions.Text = "صلاحيات المستخدم";
@@ -160,7 +152,8 @@
             this.txt_firstname.SelectedText = "";
             this.txt_firstname.Size = new System.Drawing.Size(239, 38);
             this.txt_firstname.TabIndex = 0;
-            this.txt_firstname.Tag = "";
+            this.txt_firstname.Tag = "الأسم الأول *";
+            this.txt_firstname.Validating += new System.ComponentModel.CancelEventHandler(this.txt_firstname_Validating);
             // 
             // txt_secondname
             // 
@@ -189,7 +182,8 @@
             this.txt_secondname.SelectedText = "";
             this.txt_secondname.Size = new System.Drawing.Size(239, 38);
             this.txt_secondname.TabIndex = 1;
-            this.txt_secondname.Tag = "";
+            this.txt_secondname.Tag = "الأسم الثاني *";
+            this.txt_secondname.Validating += new System.ComponentModel.CancelEventHandler(this.txt_firstname_Validating);
             // 
             // txt_lastname
             // 
@@ -218,7 +212,7 @@
             this.txt_lastname.SelectedText = "";
             this.txt_lastname.Size = new System.Drawing.Size(239, 38);
             this.txt_lastname.TabIndex = 2;
-            this.txt_lastname.Tag = "";
+            this.txt_lastname.Tag = "الأسم الثااث";
             // 
             // txt_username
             // 
@@ -247,18 +241,8 @@
             this.txt_username.SelectedText = "";
             this.txt_username.Size = new System.Drawing.Size(239, 38);
             this.txt_username.TabIndex = 3;
-            this.txt_username.Tag = "";
-            // 
-            // lbl_department
-            // 
-            this.lbl_department.AutoSize = true;
-            this.lbl_department.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_department.ForeColor = System.Drawing.Color.Red;
-            this.lbl_department.Location = new System.Drawing.Point(90, 298);
-            this.lbl_department.Name = "lbl_department";
-            this.lbl_department.Size = new System.Drawing.Size(35, 14);
-            this.lbl_department.TabIndex = 35;
-            this.lbl_department.Text = "????";
+            this.txt_username.Tag = "أسم المستخدم *";
+            this.txt_username.Validating += new System.ComponentModel.CancelEventHandler(this.txt_username_Validating);
             // 
             // dtp_dob
             // 
@@ -303,6 +287,9 @@
             this.txt_idnumber.SelectedText = "";
             this.txt_idnumber.Size = new System.Drawing.Size(321, 38);
             this.txt_idnumber.TabIndex = 8;
+            this.txt_idnumber.Tag = "رقم الهوية";
+            this.txt_idnumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_idnumber_KeyPress);
+            this.txt_idnumber.Validating += new System.ComponentModel.CancelEventHandler(this.txt_idnumber_Validating);
             // 
             // txt_address
             // 
@@ -331,6 +318,8 @@
             this.txt_address.SelectedText = "";
             this.txt_address.Size = new System.Drawing.Size(323, 38);
             this.txt_address.TabIndex = 9;
+            this.txt_address.Tag = "العنوان *";
+            this.txt_address.Validating += new System.ComponentModel.CancelEventHandler(this.txt_firstname_Validating);
             // 
             // txt_phone1
             // 
@@ -359,6 +348,9 @@
             this.txt_phone1.SelectedText = "";
             this.txt_phone1.Size = new System.Drawing.Size(321, 38);
             this.txt_phone1.TabIndex = 10;
+            this.txt_phone1.Tag = "الهاتف 1 *";
+            this.txt_phone1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_idnumber_KeyPress);
+            this.txt_phone1.Validating += new System.ComponentModel.CancelEventHandler(this.txt_phone1_Validating);
             // 
             // txt_phone2
             // 
@@ -387,6 +379,9 @@
             this.txt_phone2.SelectedText = "";
             this.txt_phone2.Size = new System.Drawing.Size(321, 38);
             this.txt_phone2.TabIndex = 11;
+            this.txt_phone2.Tag = "الهاتف 2 *";
+            this.txt_phone2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_idnumber_KeyPress);
+            this.txt_phone2.Validating += new System.ComponentModel.CancelEventHandler(this.txt_phone2_Validating);
             // 
             // guna2GroupBox1
             // 
@@ -416,7 +411,7 @@
             this.rb_female.Location = new System.Drawing.Point(157, 46);
             this.rb_female.Name = "rb_female";
             this.rb_female.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rb_female.Size = new System.Drawing.Size(46, 19);
+            this.rb_female.Size = new System.Drawing.Size(69, 29);
             this.rb_female.TabIndex = 7;
             this.rb_female.Text = "أنثئ";
             this.rb_female.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -438,7 +433,7 @@
             this.rb_male.Location = new System.Drawing.Point(94, 46);
             this.rb_male.Name = "rb_male";
             this.rb_male.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rb_male.Size = new System.Drawing.Size(42, 19);
+            this.rb_male.Size = new System.Drawing.Size(63, 29);
             this.rb_male.TabIndex = 6;
             this.rb_male.TabStop = true;
             this.rb_male.Tag = "";
@@ -481,134 +476,23 @@
             this.txt_password.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_password.IconLeft = global::Cafe_Management_System.Properties.Resources.show_password;
+            this.txt_password.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.txt_password.IconLeftSize = new System.Drawing.Size(25, 25);
             this.txt_password.Location = new System.Drawing.Point(455, 235);
             this.txt_password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_password.MaxLength = 12;
             this.txt_password.Name = "txt_password";
-            this.txt_password.PasswordChar = '\0';
+            this.txt_password.PasswordChar = '●';
             this.txt_password.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txt_password.PlaceholderText = "كلمة السر *";
             this.txt_password.SelectedText = "";
             this.txt_password.Size = new System.Drawing.Size(239, 38);
             this.txt_password.TabIndex = 4;
-            this.txt_password.Tag = "";
-            // 
-            // lbl_firstnametoltip
-            // 
-            this.lbl_firstnametoltip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_firstnametoltip.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_firstnametoltip.ForeColor = System.Drawing.Color.Red;
-            this.lbl_firstnametoltip.Location = new System.Drawing.Point(700, 206);
-            this.lbl_firstnametoltip.Name = "lbl_firstnametoltip";
-            this.lbl_firstnametoltip.Size = new System.Drawing.Size(239, 24);
-            this.lbl_firstnametoltip.TabIndex = 49;
-            this.lbl_firstnametoltip.Text = "تنسيق غير صحيح";
-            this.lbl_firstnametoltip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_firstnametoltip.Visible = false;
-            // 
-            // lbl_secondnametoltip
-            // 
-            this.lbl_secondnametoltip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_secondnametoltip.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_secondnametoltip.ForeColor = System.Drawing.Color.Red;
-            this.lbl_secondnametoltip.Location = new System.Drawing.Point(455, 206);
-            this.lbl_secondnametoltip.Name = "lbl_secondnametoltip";
-            this.lbl_secondnametoltip.Size = new System.Drawing.Size(239, 24);
-            this.lbl_secondnametoltip.TabIndex = 50;
-            this.lbl_secondnametoltip.Text = "تنسيق غير صحيح";
-            this.lbl_secondnametoltip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_secondnametoltip.Visible = false;
-            // 
-            // lbl_lastnametoltip
-            // 
-            this.lbl_lastnametoltip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_lastnametoltip.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_lastnametoltip.ForeColor = System.Drawing.Color.Red;
-            this.lbl_lastnametoltip.Location = new System.Drawing.Point(210, 206);
-            this.lbl_lastnametoltip.Name = "lbl_lastnametoltip";
-            this.lbl_lastnametoltip.Size = new System.Drawing.Size(239, 24);
-            this.lbl_lastnametoltip.TabIndex = 51;
-            this.lbl_lastnametoltip.Text = "تنسيق غير صحيح";
-            this.lbl_lastnametoltip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_lastnametoltip.Visible = false;
-            // 
-            // lbl_usernametoltip
-            // 
-            this.lbl_usernametoltip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_usernametoltip.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usernametoltip.ForeColor = System.Drawing.Color.Red;
-            this.lbl_usernametoltip.Location = new System.Drawing.Point(700, 277);
-            this.lbl_usernametoltip.Name = "lbl_usernametoltip";
-            this.lbl_usernametoltip.Size = new System.Drawing.Size(239, 24);
-            this.lbl_usernametoltip.TabIndex = 52;
-            this.lbl_usernametoltip.Text = "تنسيق غير صحيح";
-            this.lbl_usernametoltip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_usernametoltip.Visible = false;
-            // 
-            // lbl_passwordtoltip
-            // 
-            this.lbl_passwordtoltip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_passwordtoltip.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_passwordtoltip.ForeColor = System.Drawing.Color.Red;
-            this.lbl_passwordtoltip.Location = new System.Drawing.Point(455, 277);
-            this.lbl_passwordtoltip.Name = "lbl_passwordtoltip";
-            this.lbl_passwordtoltip.Size = new System.Drawing.Size(239, 24);
-            this.lbl_passwordtoltip.TabIndex = 53;
-            this.lbl_passwordtoltip.Text = "تنسيق غير صحيح";
-            this.lbl_passwordtoltip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_passwordtoltip.Visible = false;
-            // 
-            // lbl_idnumbertoltip
-            // 
-            this.lbl_idnumbertoltip.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_idnumbertoltip.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_idnumbertoltip.ForeColor = System.Drawing.Color.Red;
-            this.lbl_idnumbertoltip.Location = new System.Drawing.Point(742, 532);
-            this.lbl_idnumbertoltip.Name = "lbl_idnumbertoltip";
-            this.lbl_idnumbertoltip.Size = new System.Drawing.Size(320, 29);
-            this.lbl_idnumbertoltip.TabIndex = 54;
-            this.lbl_idnumbertoltip.Text = "تنسيق غير صحيح";
-            this.lbl_idnumbertoltip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_idnumbertoltip.Visible = false;
-            // 
-            // lbl_addresstoltip
-            // 
-            this.lbl_addresstoltip.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_addresstoltip.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_addresstoltip.ForeColor = System.Drawing.Color.Red;
-            this.lbl_addresstoltip.Location = new System.Drawing.Point(741, 607);
-            this.lbl_addresstoltip.Name = "lbl_addresstoltip";
-            this.lbl_addresstoltip.Size = new System.Drawing.Size(320, 29);
-            this.lbl_addresstoltip.TabIndex = 55;
-            this.lbl_addresstoltip.Text = "تنسيق غير صحيح";
-            this.lbl_addresstoltip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_addresstoltip.Visible = false;
-            // 
-            // lbl_phone1toltip
-            // 
-            this.lbl_phone1toltip.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_phone1toltip.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_phone1toltip.ForeColor = System.Drawing.Color.Red;
-            this.lbl_phone1toltip.Location = new System.Drawing.Point(237, 532);
-            this.lbl_phone1toltip.Name = "lbl_phone1toltip";
-            this.lbl_phone1toltip.Size = new System.Drawing.Size(321, 29);
-            this.lbl_phone1toltip.TabIndex = 56;
-            this.lbl_phone1toltip.Text = "تنسيق غير صحيح";
-            this.lbl_phone1toltip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_phone1toltip.Visible = false;
-            // 
-            // lbl_phone2toltip
-            // 
-            this.lbl_phone2toltip.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_phone2toltip.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_phone2toltip.ForeColor = System.Drawing.Color.Red;
-            this.lbl_phone2toltip.Location = new System.Drawing.Point(237, 607);
-            this.lbl_phone2toltip.Name = "lbl_phone2toltip";
-            this.lbl_phone2toltip.Size = new System.Drawing.Size(321, 29);
-            this.lbl_phone2toltip.TabIndex = 57;
-            this.lbl_phone2toltip.Text = "تنسيق غير صحيح";
-            this.lbl_phone2toltip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_phone2toltip.Visible = false;
+            this.txt_password.Tag = "كلمة السر *";
+            this.txt_password.UseSystemPasswordChar = true;
+            this.txt_password.IconLeftClick += new System.EventHandler(this.txt_password_IconLeftClick);
+            this.txt_password.Validating += new System.ComponentModel.CancelEventHandler(this.txt_password_Validating);
             // 
             // btn_save
             // 
@@ -668,21 +552,17 @@
             this.btn_back.TabIndex = 15;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
-            // UC_AddUpdateUsers
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // UC_AddUpdateManagementUsers
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.lbl_phone2toltip);
-            this.Controls.Add(this.lbl_phone1toltip);
-            this.Controls.Add(this.lbl_addresstoltip);
-            this.Controls.Add(this.lbl_idnumbertoltip);
-            this.Controls.Add(this.lbl_passwordtoltip);
-            this.Controls.Add(this.lbl_usernametoltip);
-            this.Controls.Add(this.lbl_lastnametoltip);
-            this.Controls.Add(this.lbl_secondnametoltip);
-            this.Controls.Add(this.lbl_firstnametoltip);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.lbl_showpermissions);
             this.Controls.Add(this.groupbox1);
@@ -691,7 +571,6 @@
             this.Controls.Add(this.txt_phone1);
             this.Controls.Add(this.txt_address);
             this.Controls.Add(this.txt_idnumber);
-            this.Controls.Add(this.lbl_department);
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.txt_lastname);
             this.Controls.Add(this.txt_secondname);
@@ -702,14 +581,15 @@
             this.Controls.Add(this.pic_userimage);
             this.Controls.Add(this.btn_back);
             this.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.Name = "UC_AddUpdateUsers";
+            this.Name = "UC_AddUpdateManagementUsers";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Size = new System.Drawing.Size(1300, 700);
-            this.Load += new System.EventHandler(this.UC_AddUpdateUsers_Load);
+            this.Load += new System.EventHandler(this.UC_AddUpdateManagementUsers_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             this.groupbox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_userimage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -727,7 +607,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txt_secondname;
         private Guna.UI2.WinForms.Guna2TextBox txt_lastname;
         private Guna.UI2.WinForms.Guna2TextBox txt_username;
-        private System.Windows.Forms.Label lbl_department;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtp_dob;
         private Guna.UI2.WinForms.Guna2TextBox txt_idnumber;
         private Guna.UI2.WinForms.Guna2TextBox txt_address;
@@ -739,16 +618,8 @@
         private Guna.UI2.WinForms.Guna2GroupBox groupbox1;
         private System.Windows.Forms.LinkLabel lbl_showpermissions;
         private Guna.UI2.WinForms.Guna2TextBox txt_password;
-        private System.Windows.Forms.Label lbl_firstnametoltip;
-        private System.Windows.Forms.Label lbl_secondnametoltip;
-        private System.Windows.Forms.Label lbl_lastnametoltip;
-        private System.Windows.Forms.Label lbl_usernametoltip;
-        private System.Windows.Forms.Label lbl_passwordtoltip;
-        private System.Windows.Forms.Label lbl_idnumbertoltip;
-        private System.Windows.Forms.Label lbl_addresstoltip;
-        private System.Windows.Forms.Label lbl_phone1toltip;
-        private System.Windows.Forms.Label lbl_phone2toltip;
         private Guna.UI2.WinForms.Guna2Button btn_save;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

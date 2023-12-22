@@ -54,6 +54,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -119,11 +120,17 @@
     <Compile Include="Forms\Services\UserControls\UC_ServicesSubButtons.Designer.cs">
       <DependentUpon>UC_ServicesSubButtons.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Settings\frms\frm_settings.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Forms\Settings\UserControls\UC_CurrentUserProfile.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Settings\frms\frm_settings.Designer.cs">
-      <DependentUpon>frm_settings.cs</DependentUpon>
+    <Compile Include="Forms\Settings\UserControls\UC_CurrentUserProfile.Designer.cs">
+      <DependentUpon>UC_CurrentUserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_Settings.Designer.cs">
+      <DependentUpon>UC_Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tables\frms\frm_AddUpdateTable.cs">
       <SubType>Form</SubType>
@@ -143,11 +150,17 @@
     <Compile Include="Forms\Tables\UserControls\UC_Tables.Designer.cs">
       <DependentUpon>UC_Tables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Users\UserControls\UC_AddUpdateUsers.cs">
+    <Compile Include="Forms\Users\UserControls\UC_AddUpdateManagementUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Users\UserControls\UC_AddUpdateUsers.Designer.cs">
-      <DependentUpon>UC_AddUpdateUsers.cs</DependentUpon>
+    <Compile Include="Forms\Users\UserControls\UC_AddUpdateManagementUsers.Designer.cs">
+      <DependentUpon>UC_AddUpdateManagementUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_AddUpdateServicesUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\UserControls\UC_AddUpdateServicesUsers.Designer.cs">
+      <DependentUpon>UC_AddUpdateServicesUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Users\UserControls\UC_ShowUserInfo.cs">
       <SubType>UserControl</SubType>
@@ -175,6 +188,7 @@
       <DependentUpon>frm_main.cs</DependentUpon>
     </Compile>
     <Compile Include="GLOBAL CLASSES\cls_util.cs" />
+    <Compile Include="GLOBAL CLASSES\cls_Validation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Home\UserControls\UC_Home.resx">
@@ -204,8 +218,11 @@
     <EmbeddedResource Include="Forms\Services\UserControls\UC_ServicesSubButtons.resx">
       <DependentUpon>UC_ServicesSubButtons.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Settings\frms\frm_settings.resx">
-      <DependentUpon>frm_settings.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Settings\UserControls\UC_CurrentUserProfile.resx">
+      <DependentUpon>UC_CurrentUserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\UserControls\UC_Settings.resx">
+      <DependentUpon>UC_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tables\frms\frm_AddUpdateTable.resx">
       <DependentUpon>frm_AddUpdateTable.cs</DependentUpon>
@@ -216,8 +233,11 @@
     <EmbeddedResource Include="Forms\Tables\UserControls\UC_Tables.resx">
       <DependentUpon>UC_Tables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Users\UserControls\UC_AddUpdateUsers.resx">
-      <DependentUpon>UC_AddUpdateUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Users\UserControls\UC_AddUpdateManagementUsers.resx">
+      <DependentUpon>UC_AddUpdateManagementUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\UserControls\UC_AddUpdateServicesUsers.resx">
+      <DependentUpon>UC_AddUpdateServicesUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\UserControls\UC_ShowUserInfo.resx">
       <DependentUpon>UC_ShowUserInfo.cs</DependentUpon>
@@ -268,7 +288,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\More\UserControls\" />
-    <Folder Include="Forms\Settings\UserControls\" />
+    <Folder Include="Forms\Settings\frms\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Close 64.png" />

@@ -31,33 +31,76 @@ namespace Cafe_Management_System.Forms.Users.UserControls
 
             UC_UsersList uc = new UC_UsersList();
 
-            uc.OnShowUserClicked += _LoadShowUserPage;
-            uc.OnAddNewClicked += _LoadAddNewUserPage;
-            uc.OnUpdateClicked += _LoadUpdateUserPage;
-
+            uc.OnShowUserClick += _LoadShowUserPage;
+            uc.OnAddNewManagementUserClick += _LoadAddNewManagementUserPage;
+            uc.OnUpdateManagementUserClick += _LoadUpdateManagementUserPage;
+            uc.OnAddNewServicesUserClick += _LoadAddNewServicesUserPage;
+            uc.OnUpdateServicesUserClick += _LoadUpdateServicesUserPage;
             uc.Dock = DockStyle.Fill;
             this.Controls.Add(uc);
 
         }
 
-        void _LoadAddNewUserPage(object sernder, cls_ShowUserEventArgs.EN_UserDepartment userDepartment)
+        void _LoadAddNewManagementUserPage(object sernder, cls_ShowUserEventArgs.EN_UserDepartment userDepartment)
         {
             
             this.Controls.Clear();
 
-            UC_AddUpdateUsers uc = new UC_AddUpdateUsers(userDepartment);
+            UC_AddUpdateManagementUsers uc = new UC_AddUpdateManagementUsers();
             uc.OnBackClick += _LoadUsersListPage;
             uc.Dock = DockStyle.Fill;
             this.Controls.Add(uc);
 
         }
 
-        void _LoadUpdateUserPage(object sender, cls_ShowUserEventArgs eventArgs)
+        void _LoadUpdateManagementUserPage(object sender, cls_ShowUserEventArgs eventArgs)
         {
 
             this.Controls.Clear();
 
-            UC_AddUpdateUsers uc = new UC_AddUpdateUsers(eventArgs.UserID, eventArgs.UserDepartment);
+            switch (eventArgs.UserDepartment)
+            {
+
+                case cls_ShowUserEventArgs.EN_UserDepartment.Management:
+
+                    UC_AddUpdateManagementUsers uc = new UC_AddUpdateManagementUsers(eventArgs.UserID);
+                    uc.OnBackClick += _LoadUsersListPage;
+                    uc.Dock = DockStyle.Fill;
+                    this.Controls.Add(uc);
+
+                    break;
+
+                case cls_ShowUserEventArgs.EN_UserDepartment.Services:
+
+                    UC_AddUpdateServicesUsers page = new UC_AddUpdateServicesUsers(eventArgs.UserID);
+                    page.OnBackClick += _LoadUsersListPage;
+                    page.Dock = DockStyle.Fill;
+                    this.Controls.Add(page);
+
+                    break;
+
+            }
+
+        }
+
+        void _LoadAddNewServicesUserPage(object sender, cls_ShowUserEventArgs.EN_UserDepartment userDepartment)
+        {
+
+            this.Controls.Clear();
+
+            UC_AddUpdateServicesUsers uc = new UC_AddUpdateServicesUsers();
+            uc.OnBackClick += _LoadUsersListPage;
+            uc.Dock = DockStyle.Fill;
+            this.Controls.Add(uc);
+
+        }
+
+        void _LoadUpdateServicesUserPage(object sender, cls_ShowUserEventArgs eventArgs)
+        {
+            
+            this.Controls.Clear();
+
+            UC_AddUpdateServicesUsers uc = new UC_AddUpdateServicesUsers(eventArgs.UserID);
             uc.OnBackClick += _LoadUsersListPage;
             uc.Dock = DockStyle.Fill;
             this.Controls.Add(uc);
@@ -71,7 +114,7 @@ namespace Cafe_Management_System.Forms.Users.UserControls
 
             UC_ShowUserInfo uc = new UC_ShowUserInfo(eventArgs.UserID, eventArgs.UserDepartment);
             uc.OnBackClick += _LoadUsersListPage;
-            uc.OnUpdateClicked += _LoadUpdateUserPage;
+            uc.OnUpdateClicked += _LoadUpdateManagementUserPage;
             uc.Dock = DockStyle.Fill;
             this.Controls.Add(uc);
 

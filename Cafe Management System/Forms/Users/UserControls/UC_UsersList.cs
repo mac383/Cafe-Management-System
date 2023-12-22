@@ -18,34 +18,50 @@ namespace Cafe_Management_System.Forms.Users.UserControls
     public partial class UC_UsersList : UserControl
     {
 
-        public event EventHandler<cls_ShowUserEventArgs> OnShowUserClicked;
+        public event EventHandler<cls_ShowUserEventArgs> OnShowUserClick;
 
-        public event EventHandler<cls_ShowUserEventArgs.EN_UserDepartment> OnAddNewClicked;
+        public event EventHandler<cls_ShowUserEventArgs.EN_UserDepartment> OnAddNewManagementUserClick;
 
-        public event EventHandler<cls_ShowUserEventArgs> OnUpdateClicked;
+        public event EventHandler<cls_ShowUserEventArgs.EN_UserDepartment> OnAddNewServicesUserClick;
+
+        public event EventHandler<cls_ShowUserEventArgs> OnUpdateManagementUserClick;
+
+        public event EventHandler<cls_ShowUserEventArgs> OnUpdateServicesUserClick;
 
         protected virtual void HandleShowUserClicked(int userID, cls_ShowUserEventArgs.EN_UserDepartment userDepartment)
         {
 
-            if (OnShowUserClicked != null)
-                OnShowUserClicked(this, new cls_ShowUserEventArgs(userID, userDepartment));
+            if (OnShowUserClick != null)
+                OnShowUserClick(this, new cls_ShowUserEventArgs(userID, userDepartment));
 
         }
 
-        protected virtual void HandleAddNewClicked(cls_ShowUserEventArgs.EN_UserDepartment userDepartment)
+        protected virtual void HandleAddNewManagementUserEvent(cls_ShowUserEventArgs.EN_UserDepartment userDepartment)
         {
 
-            if (OnAddNewClicked != null)
-                OnAddNewClicked(this, userDepartment);
+            if (OnAddNewManagementUserClick != null)
+                OnAddNewManagementUserClick(this, userDepartment);
 
         }
 
-        protected virtual void HandleUpdateClicked(int userID, cls_ShowUserEventArgs.EN_UserDepartment userDepartment)
+        protected virtual void HandleAddNewServicesUserEvent(cls_ShowUserEventArgs.EN_UserDepartment userDepartment)
+        {
+            if (OnAddNewServicesUserClick != null)
+                OnAddNewServicesUserClick(this, userDepartment);
+        }
+
+        protected virtual void HandleUpdateManagementUserEvent(int userID, cls_ShowUserEventArgs.EN_UserDepartment userDepartment)
         {
 
-            if (OnUpdateClicked != null)
-                OnUpdateClicked(this, new cls_ShowUserEventArgs(userID, userDepartment));
+            if (OnUpdateManagementUserClick != null)
+                OnUpdateManagementUserClick(this, new cls_ShowUserEventArgs(userID, userDepartment));
 
+        }
+
+        protected virtual void HandleUpdateServicesUserEvent(int userID, cls_ShowUserEventArgs.EN_UserDepartment userDepartment)
+        {
+            if (OnUpdateServicesUserClick != null)
+                OnUpdateServicesUserClick(this, new cls_ShowUserEventArgs(userID, userDepartment));
         }
 
         DataTable _Users;
@@ -149,15 +165,15 @@ namespace Cafe_Management_System.Forms.Users.UserControls
             {
 
                 case "الكل":
-                    _dv.RowFilter = string.Format("FirstName + ' ' + SecondName + ' ' + LastName LIKE '{0}%' OR UserName = '{0}'", txt_search.Text.Trim());
+                    _dv.RowFilter = string.Format("FirstName + ' ' + SecondName LIKE '{0}%' OR UserName = '{0}'", txt_search.Text.Trim());
                     break;
 
                 case "مستخدمين برنامج الخدمات":
-                    _dv.RowFilter = string.Format("(FirstName + ' ' + SecondName + ' ' + LastName LIKE '{0}%' OR UserName = '{0}') AND Department = 'الخدمات'", txt_search.Text.Trim());
+                    _dv.RowFilter = string.Format("(FirstName + ' ' + SecondName LIKE '{0}%' OR UserName = '{0}') AND Department = 'الخدمات'", txt_search.Text.Trim());
                     break;
 
                 case "مستخدمين برنامج الأدارة":
-                    _dv.RowFilter = string.Format("(FirstName + ' ' + SecondName + ' ' + LastName LIKE '{0}%' OR UserName = '{0}') AND Department = 'الإدارة'", txt_search.Text.Trim());
+                    _dv.RowFilter = string.Format("(FirstName + ' ' + SecondName LIKE '{0}%' OR UserName = '{0}') AND Department = 'الإدارة'", txt_search.Text.Trim());
                     break;
 
             }
@@ -267,12 +283,12 @@ namespace Cafe_Management_System.Forms.Users.UserControls
 
         private void cmb_addtomanagement_Click(object sender, EventArgs e)
         {
-            HandleAddNewClicked(cls_ShowUserEventArgs.EN_UserDepartment.Management);
+            HandleAddNewManagementUserEvent(cls_ShowUserEventArgs.EN_UserDepartment.Management);
         }
 
         private void cmb_addtoservices_Click(object sender, EventArgs e)
         {
-            HandleAddNewClicked(cls_ShowUserEventArgs.EN_UserDepartment.Services);
+            HandleAddNewServicesUserEvent(cls_ShowUserEventArgs.EN_UserDepartment.Services);
         }
 
         private void cmb_update_Click(object sender, EventArgs e)
@@ -287,7 +303,18 @@ namespace Cafe_Management_System.Forms.Users.UserControls
                 cls_ShowUserEventArgs.EN_UserDepartment.Management :
                 cls_ShowUserEventArgs.EN_UserDepartment.Services;
 
-            HandleUpdateClicked(userID, userDepartment);
+            switch (userDepartment)
+            {
+
+                case cls_ShowUserEventArgs.EN_UserDepartment.Management:
+                    HandleUpdateManagementUserEvent(userID, userDepartment);
+                    break;
+
+                case cls_ShowUserEventArgs.EN_UserDepartment.Services:
+                    HandleUpdateServicesUserEvent(userID, userDepartment);
+                    break;
+
+            }
 
         }
 
@@ -382,6 +409,19 @@ namespace Cafe_Management_System.Forms.Users.UserControls
                         break;
 
             }
+
+        }
+
+        private void dgv_users_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dgv_users.SelectedCells.Count <= 0)
+                return;
+
+            if (dgv_users.SelectedRows[0].Cells["col_username"].ColumnIndex != e.ColumnIndex)
+                return;
+
+            Clipboard.SetText(dgv_users.SelectedRows[0].Cells["col_username"].Value.ToString());
 
         }
 

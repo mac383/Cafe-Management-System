@@ -48,7 +48,6 @@ J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_M
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.UserControls.UC_Services.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.UserControls.UC_ServicesDepartment.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Services.UserControls.UC_ServicesSubButtons.resources
-J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.frms.frm_settings.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Tables.frms.frm_AddUpdateTable.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Tables.UserControls.UC_Table.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Tables.UserControls.UC_Tables.resources
@@ -60,6 +59,9 @@ J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe M
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.exe
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe Management System.pdb
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_UsersMainPage.resources
-J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_AddUpdateUsers.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_UsersList.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_ShowUserInfo.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_AddUpdateManagementUsers.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_AddUpdateServicesUsers.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.UserControls.UC_Settings.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.UserControls.UC_CurrentUserProfile.resources

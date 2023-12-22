@@ -186,7 +186,7 @@ namespace CAFE_MANAGEMENT_DATAACCESS.CLASSES
             bool isExist = false;
 
             SqlConnection Connection = cls_Database.Connection();
-            string Query = @"SELECT EXIST = 'TRUE' FROM People WHERE PersonID != @PersonID AND Phone1 = @Phone OR Phone2 = @Phone";
+            string Query = @"SELECT EXIST = 'TRUE' FROM People WHERE PersonID != @PersonID AND (Phone1 = @Phone OR Phone2 = @Phone)";
 
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@PersonID", PersonID);

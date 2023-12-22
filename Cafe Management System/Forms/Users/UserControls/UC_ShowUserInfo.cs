@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Cafe_Management_System.Forms.Users.UserControls
 {
@@ -174,8 +175,22 @@ namespace Cafe_Management_System.Forms.Users.UserControls
 
                             if (cls_ManagementAppUser.DeleteUser(_UserID))
                             {
+
+                                if (File.Exists(_ManagementUser.PersonImage))
+                                {
+                                    try
+                                    {
+                                        File.Delete(_ManagementUser.PersonImage);
+                                    }
+                                    catch
+                                    {
+                                        MessageBox.Show($"تبقئ للمستخدم صورة يمكنك حذفها\nالصورة في المسار\n{_ManagementUser.PersonImage}.");
+                                    }
+                                }
+
                                 MessageBox.Show("تم الحذف بنجاح", "اكتمل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                                 OnBackClick();
+
                             }
                             else
                                 MessageBox.Show("حذث خطأ اثناء الحذف, قد يكون للمستخدم بيانات اخرئ مرتبطة بحسابه في النظام\nتأكد من حذفها تم حاول مجدداً.", "لم يتم الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
@@ -194,8 +209,22 @@ namespace Cafe_Management_System.Forms.Users.UserControls
 
                             if (cls_ServicesAppUser.DeleteUser(_UserID))
                             {
+
+                                if (File.Exists(_ServicesUser.PersonImage))
+                                {
+                                    try
+                                    {
+                                        File.Delete(_ServicesUser.PersonImage);
+                                    }
+                                    catch
+                                    {
+                                        MessageBox.Show($"تبقئ للمستخدم صورة يمكنك حذفها\nالصورة في المسار\n{_ServicesUser.PersonImage}.");
+                                    }
+                                }
+
                                 MessageBox.Show("تم الحذف بنجاح", "اكتمل الحذف", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                                 OnBackClick();
+
                             }
                             else
                                 MessageBox.Show("حذث خطأ اثناء الحذف, قد يكون للمستخدم بيانات اخرئ مرتبطة بحسابه في النظام\nتأكد من حذفها تم حاول مجدداً.", "لم يتم الحذف", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);

@@ -93,7 +93,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
         public static bool IsUserExistByPhone(int userID, string Phone)
         {
             int personid = Find(userID).PersonID;
-            return (personid < 0) ? IsPersonExistByPhone(personid, Phone) : false;
+            return (personid > 0) ? IsPersonExistByPhone(personid, Phone) : false;
         }
 
         public static cls_ManagementAppUser Find(int UserID)
