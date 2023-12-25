@@ -1,4 +1,5 @@
 ﻿using SpaceLibraries.Classes.Database;
+using SpaceLibraries.Classes.Encryption;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -249,6 +250,47 @@ namespace CAFE_MANAGEMENT_DATAACCESS.CLASSES
             finally { Connection.Close(); }
 
             return dt;
+
+        }
+
+        public static bool ChangePassword(int userID, string newPassword)
+        {
+
+            int RowsAffected = -1;
+
+            newPassword = cls_Encryption.Encrypt(newPassword);
+
+            SqlConnection Connection = cls_Database.Connection();
+            string Query = @"UPDATE  People
+                             SET Password = @NewPassword
+                             FROM ManagementAppUsers INNER JOIN
+                             People ON ManagementAppUsers.PersonID = People.PersonID
+                             WHERE ManagementAppUsers.UserID = @UserID";
+
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@UserID", userID);
+            Command.Parameters.AddWithValue("@NewPassword", newPassword);
+
+            try
+            {
+
+                Connection.Open();
+                object Result = Command.ExecuteNonQuery();
+
+                if (Result != null && int.TryParse(Result.ToString(), out int rowsaffected))
+                    RowsAffected = rowsaffected;
+
+            }
+
+            catch { }
+
+            finally
+            {
+                Connection.Close();
+            }
+
+
+            return RowsAffected > 0;
 
         }
 

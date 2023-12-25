@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cafe_Management_System.Forms.Users.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,26 +18,33 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
             InitializeComponent();
         }
 
-        private void UC_Settings_Load(object sender, EventArgs e)
+        private void _LoadSettingsContain()
         {
 
-            foreach (Control c in flp_container.Controls)
-            {
-                c.Width = flp_container.Width - (int)(flp_container.Width * 0.1);
-                c.Margin = new Padding((flp_container.Width - c.Width) / 2, 3, (flp_container.Width - c.Width) / 2, 3);
-            }
+            this.Controls.Clear();
+
+            UC_SettingsContain uc = new UC_SettingsContain();
+            uc.Dock = DockStyle.Fill;
+            uc.OnUpdate += _LoadUpdateUser;
+            this.Controls.Add(uc);
 
         }
 
-        private void UC_Settings_SizeChanged(object sender, EventArgs e)
+        private void _LoadUpdateUser(int userID)
         {
 
-            foreach (Control c in flp_container.Controls)
-            {
-                c.Width = flp_container.Width - (int)(flp_container.Width * 0.1);
-                c.Margin = new Padding((flp_container.Width - c.Width) / 2, 3, (flp_container.Width - c.Width) / 2, 3);
-            }
+            this.Controls.Clear();
 
+            UC_AddUpdateManagementUsers uc = new UC_AddUpdateManagementUsers(userID);
+            uc.Dock = DockStyle.Fill;
+            uc.OnBackClick += _LoadSettingsContain;
+            this.Controls.Add(uc);
+
+        }
+
+        private void UC_Settings_Load(object sender, EventArgs e)
+        {
+            _LoadSettingsContain();
         }
     }
 }

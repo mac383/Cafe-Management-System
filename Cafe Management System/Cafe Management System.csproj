@@ -120,17 +120,47 @@
     <Compile Include="Forms\Services\UserControls\UC_ServicesSubButtons.Designer.cs">
       <DependentUpon>UC_ServicesSubButtons.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Settings\frms\frm_DeleteKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\frms\frm_DeleteKey.Designer.cs">
+      <DependentUpon>frm_DeleteKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Settings\UserControls\UC_CurrentUserProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Settings\UserControls\UC_CurrentUserProfile.Designer.cs">
       <DependentUpon>UC_CurrentUserProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_Key.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_Key.Designer.cs">
+      <DependentUpon>UC_Key.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_KeysPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_KeysPart.Designer.cs">
+      <DependentUpon>UC_KeysPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Settings\UserControls\UC_Settings.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Settings\UserControls\UC_Settings.Designer.cs">
       <DependentUpon>UC_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_SettingsContain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_SettingsContain.Designer.cs">
+      <DependentUpon>UC_SettingsContain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_SystemInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_SystemInfo.Designer.cs">
+      <DependentUpon>UC_SystemInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Tables\frms\frm_AddUpdateTable.cs">
       <SubType>Form</SubType>
@@ -187,6 +217,7 @@
     <Compile Include="frm_main.designer.cs">
       <DependentUpon>frm_main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GLOBAL CLASSES\cls_Global.cs" />
     <Compile Include="GLOBAL CLASSES\cls_util.cs" />
     <Compile Include="GLOBAL CLASSES\cls_Validation.cs" />
     <Compile Include="Program.cs" />
@@ -218,11 +249,26 @@
     <EmbeddedResource Include="Forms\Services\UserControls\UC_ServicesSubButtons.resx">
       <DependentUpon>UC_ServicesSubButtons.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\frms\frm_DeleteKey.resx">
+      <DependentUpon>frm_DeleteKey.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\UserControls\UC_CurrentUserProfile.resx">
       <DependentUpon>UC_CurrentUserProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\UserControls\UC_Key.resx">
+      <DependentUpon>UC_Key.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\UserControls\UC_KeysPart.resx">
+      <DependentUpon>UC_KeysPart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\UserControls\UC_Settings.resx">
       <DependentUpon>UC_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\UserControls\UC_SettingsContain.resx">
+      <DependentUpon>UC_SettingsContain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\UserControls\UC_SystemInfo.resx">
+      <DependentUpon>UC_SystemInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tables\frms\frm_AddUpdateTable.resx">
       <DependentUpon>frm_AddUpdateTable.cs</DependentUpon>
@@ -288,7 +334,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\More\UserControls\" />
-    <Folder Include="Forms\Settings\frms\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Close 64.png" />
@@ -328,6 +373,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\not-found 256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

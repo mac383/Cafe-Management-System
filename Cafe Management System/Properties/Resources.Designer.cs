@@ -93,6 +93,16 @@ namespace Cafe_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap copy {
+            get {
+                object obj = ResourceManager.GetObject("copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
@@ -136,6 +146,16 @@ namespace Cafe_Management_System.Properties {
         internal static System.Drawing.Bitmap hide_password {
             get {
                 object obj = ResourceManager.GetObject("hide password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap more_info {
+            get {
+                object obj = ResourceManager.GetObject("more info", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

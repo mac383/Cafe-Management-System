@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CLASSES\cls_Key_D.cs" />
     <Compile Include="CLASSES\cls_ManagementAppUser_D.cs" />
     <Compile Include="CLASSES\cls_Options_D.cs" />
     <Compile Include="CLASSES\cls_Person_D.cs" />

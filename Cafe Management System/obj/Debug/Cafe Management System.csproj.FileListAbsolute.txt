@@ -65,3 +65,8 @@ J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_M
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.UserControls.UC_AddUpdateServicesUsers.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.UserControls.UC_Settings.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.UserControls.UC_CurrentUserProfile.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.UserControls.UC_SystemInfo.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.UserControls.UC_Key.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.UserControls.UC_KeysPart.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.UserControls.UC_SettingsContain.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.frms.frm_DeleteKey.resources

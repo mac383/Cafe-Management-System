@@ -35,7 +35,7 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
             this.RequestID = -1;
             this.Reservation = cls_ReservationsTables.Find(ReservationID);
             this.RequestStatus = EN_RequestStatus.RequestsToAccounting;
-            this.RequestCode = cls_util.GetRandomKey(8);
+            this.RequestCode = cls_util.GetRandomKey_Numbers(8);
             this.User = new cls_ManagementAppUser();
 
         }

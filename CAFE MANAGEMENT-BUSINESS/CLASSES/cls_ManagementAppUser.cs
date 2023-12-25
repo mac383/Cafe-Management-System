@@ -190,5 +190,18 @@ namespace CAFE_MANAGEMENT_BUSINESS.CLASSES
             return cls_ManagementAppUser_D.GetUsers();
         }
 
+        public bool ChangePassword(string newPassword)
+        {
+            
+            if (cls_ManagementAppUser_D.ChangePassword(this.UserID, newPassword))
+            {
+                this.Password = newPassword;
+                return true;
+            }
+
+            return false;
+
+        }
+
     }
 }
