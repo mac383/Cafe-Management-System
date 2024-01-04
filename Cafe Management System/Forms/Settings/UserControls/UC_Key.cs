@@ -16,6 +16,9 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
     public partial class UC_Key : UserControl
     {
 
+        public delegate void OnDataBack();
+        public event OnDataBack HandleOnDataBack;
+
         cls_Key _Key;
 
         public UC_Key(int keyID, bool ShowSeparaterLine = true)
@@ -62,11 +65,17 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
 
         }
 
+        private void DataBack()
+        {
+            HandleOnDataBack();
+        }
+
         private void btn_deletekey_Click(object sender, EventArgs e)
         {
 
-            frm_DeleteKey frm = new frm_DeleteKey();
-            frm.Show();
+            frm_DeleteKey frm = new frm_DeleteKey(_Key.KeyID);
+            frm.HandleOnDataBack += DataBack;
+            frm.ShowDialog();
 
         }
     }

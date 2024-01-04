@@ -55,6 +55,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -143,6 +144,12 @@
     </Compile>
     <Compile Include="Forms\Settings\UserControls\UC_KeysPart.Designer.cs">
       <DependentUpon>UC_KeysPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_Permissions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\UserControls\UC_Permissions.Designer.cs">
+      <DependentUpon>UC_Permissions.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Settings\UserControls\UC_Settings.cs">
       <SubType>UserControl</SubType>
@@ -260,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\UserControls\UC_KeysPart.resx">
       <DependentUpon>UC_KeysPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\UserControls\UC_Permissions.resx">
+      <DependentUpon>UC_Permissions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\UserControls\UC_Settings.resx">
       <DependentUpon>UC_Settings.cs</DependentUpon>
@@ -379,6 +389,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

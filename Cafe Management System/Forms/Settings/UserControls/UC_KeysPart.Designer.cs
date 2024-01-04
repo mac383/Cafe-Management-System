@@ -72,6 +72,7 @@
             this.btn_update.Size = new System.Drawing.Size(175, 45);
             this.btn_update.TabIndex = 29;
             this.btn_update.Text = "إضافة جديد";
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // UC_KeysPart
             // 

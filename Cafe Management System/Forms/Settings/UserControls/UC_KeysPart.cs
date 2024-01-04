@@ -55,6 +55,8 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
                 key.Margin = new Padding(3);
                 key.Width = this.Width - 40;
                 key.Location = new Point((gb_container.Width - key.Width) / 2, KeyLocation_Y);
+                
+                key.HandleOnDataBack += _SetKeys;
 
                 this.Height += key.Height + (key.Margin.Top + key.Margin.Bottom);
 
@@ -84,23 +86,9 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
 
         }
 
-        private void _DeleteKey(int KeyID)
+        private void btn_update_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("هل متأكد من حذف المفتاح", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (cls_Key.Delete(KeyID))
-                {
-
-                    MessageBox.Show("تم حذف المفتاح بنجاح");
-                    _SetKeys();
-
-                }
-                else
-                    MessageBox.Show("لم يتم حذف المفتاح");
-            }
-
+            
         }
-
     }
 }
