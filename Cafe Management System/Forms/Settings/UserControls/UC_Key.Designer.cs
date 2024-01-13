@@ -82,6 +82,7 @@
             this.btn_showmore.TabIndex = 26;
             this.btn_showmore.Tag = "";
             this.toolTip1.SetToolTip(this.btn_showmore, "عرض صلاحيات المفتاح");
+            this.btn_showmore.Click += new System.EventHandler(this.btn_showmore_Click);
             // 
             // btn_copykey
             // 
@@ -141,6 +142,7 @@
             this.btn_editkey.TabIndex = 23;
             this.btn_editkey.Tag = "";
             this.toolTip1.SetToolTip(this.btn_editkey, "تعديل صلاحيات المفتاح");
+            this.btn_editkey.Click += new System.EventHandler(this.btn_editkey_Click);
             // 
             // lbl_username
             // 

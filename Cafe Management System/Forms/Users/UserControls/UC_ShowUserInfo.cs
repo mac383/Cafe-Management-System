@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Cafe_Management_System.Forms.Users.Forms;
 
 namespace Cafe_Management_System.Forms.Users.UserControls
 {
@@ -246,5 +247,10 @@ namespace Cafe_Management_System.Forms.Users.UserControls
             HandleUpdateClicked(_UserID, _UserDepartment);
         }
 
+        private void lbl_showpermissions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm_UserPermissions frm = new frm_UserPermissions(_ManagementUser.Permissions);
+            frm.ShowDialog();
+        }
     }
 }

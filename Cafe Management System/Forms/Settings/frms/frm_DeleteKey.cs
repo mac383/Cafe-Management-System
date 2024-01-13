@@ -20,11 +20,13 @@ namespace Cafe_Management_System.Forms.Settings.frms
         public event OnDataBack HandleOnDataBack;
 
         cls_Key _Key;
+
         public frm_DeleteKey(int keyID)
         {
             InitializeComponent();
             _Key = cls_Key.Find(keyID);
         }
+
 
         private void txt_keypassword_IconLeftClick(object sender, EventArgs e)
         {
@@ -89,5 +91,9 @@ namespace Cafe_Management_System.Forms.Settings.frms
                 MessageBox.Show("حصل خطأ اثناء حذف المفتاح");
 
         }
+
+
+
+
     }
 }

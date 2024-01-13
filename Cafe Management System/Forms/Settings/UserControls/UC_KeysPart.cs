@@ -1,4 +1,6 @@
 ﻿using CAFE_MANAGEMENT_BUSINESS.CLASSES;
+using CAFE_MANAGEMENT_BUSINESS.GLOBAL_CLASSES;
+using Cafe_Management_System.Forms.Settings.frms;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -25,15 +27,20 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
         private void UC_KeysPart_Load(object sender, EventArgs e)
         {
 
-            _SetKeys();
+            _LoadKeys();
 
         }
 
-        private void _SetKeys()
+        private void _Refresh()
+        {
+            _LoadKeys();
+        }
+
+        private void _LoadKeys()
         {
 
             gb_container.Controls.Clear();
-            gb_container.Controls.Add(btn_update);
+            gb_container.Controls.Add(btn_addnew);
 
             _Keys = cls_Key.GetKeys();
 
@@ -56,7 +63,7 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
                 key.Width = this.Width - 40;
                 key.Location = new Point((gb_container.Width - key.Width) / 2, KeyLocation_Y);
                 
-                key.HandleOnDataBack += _SetKeys;
+                key.HandleOnDataBack += _LoadKeys;
 
                 this.Height += key.Height + (key.Margin.Top + key.Margin.Bottom);
 
@@ -71,7 +78,7 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
         {
             
             gb_container.Controls.Clear();
-            gb_container.Controls.Add(btn_update);
+            gb_container.Controls.Add(btn_addnew);
 
             this.Size = new Size(this.Size.Width, gb_container.CustomBorderThickness.Top + 100);
 
@@ -86,9 +93,11 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
 
         }
 
-        private void btn_update_Click(object sender, EventArgs e)
+        private void btn_addnew_Click(object sender, EventArgs e)
         {
-            
+            frm_KeyPermissions frm = new frm_KeyPermissions();
+            frm.DataBack += _Refresh;
+            frm.ShowDialog();
         }
     }
 }

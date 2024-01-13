@@ -50,5 +50,7 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
         {
             HandleOnUpdateEvent(obj);
         }
+
+        
     }
 }

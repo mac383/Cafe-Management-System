@@ -16,6 +16,7 @@ using System.IO;
 using Cafe_Management_System.GLOBAL_CLASSES;
 using Guna.UI2.WinForms;
 using static System.Net.Mime.MediaTypeNames;
+using Cafe_Management_System.Forms.Users.Forms;
 
 namespace Cafe_Management_System.Forms.Users.UserControls
 {
@@ -30,6 +31,7 @@ namespace Cafe_Management_System.Forms.Users.UserControls
 
         int _UserID;
         cls_ManagementAppUser _User;
+        long _CurrentUserPermissions;
 
         public UC_AddUpdateManagementUsers()
         {
@@ -266,7 +268,7 @@ namespace Cafe_Management_System.Forms.Users.UserControls
             _User.Phone1 = txt_phone1.Text.Trim();
             _User.Phone2 = (string.IsNullOrEmpty(txt_phone2.Text)) ? null : txt_phone2.Text.Trim();
 
-            _User.Permissions = -1;
+            _User.Permissions = _CurrentUserPermissions;
 
             if (_User.Save())
             {
@@ -298,7 +300,7 @@ namespace Cafe_Management_System.Forms.Users.UserControls
             _User.Phone1 = txt_phone1.Text.Trim();
             _User.Phone2 = (string.IsNullOrEmpty(txt_phone2.Text)) ? null : txt_phone2.Text.Trim();
 
-            _User.Permissions = -1;
+            _User.Permissions = _CurrentUserPermissions;
 
             if (_User.Save())
             {
@@ -559,5 +561,37 @@ namespace Cafe_Management_System.Forms.Users.UserControls
 
         }
 
+        void UserPermissionsDataBack(long Permissions)
+        {
+
+            _CurrentUserPermissions = Permissions;
+
+        }
+
+        private void lbl_showpermissions_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+            frm_UserPermissions frm;
+
+            switch (_mode)
+            {
+
+                case EN_Mode.addnew:
+
+                    frm = new frm_UserPermissions();
+                    frm.DataBack += UserPermissionsDataBack;
+                    frm.ShowDialog();
+                    break;
+
+                case EN_Mode.update:
+
+                    frm = new frm_UserPermissions(_User.Permissions);
+                    frm.DataBack += UserPermissionsDataBack;
+                    frm.ShowDialog();
+                    break;
+
+            }
+
+        }
     }
 }

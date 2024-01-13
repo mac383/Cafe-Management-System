@@ -95,6 +95,53 @@ namespace CAFE_MANAGEMENT_DATAACCESS.CLASSES
 
         }
 
+        public static bool Find(ref int KeyID, string Key, ref string KeyPassword, ref long KeyPower, ref DateTime CreatedKeyDate, ref int ByUserID)
+        {
+
+            bool isFind = false;
+
+            SqlConnection Connection = cls_Database.Connection();
+            string Query = @"SELECT KeyID, [Key], KeyPassword, KeyPowers, ByUser, CreatedKeyDate
+                             FROM OperationsKeys
+                             WHERE [KEY] = @Key";
+
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@Key", Key);
+
+            try
+            {
+
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    isFind = true;
+
+                    KeyID = Convert.ToInt32(Reader["KeyID"].ToString());
+                    KeyPassword = cls_Encryption.Decrypt(Reader["KeyPassword"].ToString().Trim());
+                    KeyPower = Convert.ToInt64(Reader["KeyPowers"]);
+                    ByUserID = Convert.ToInt32(Reader["ByUser"]);
+                    CreatedKeyDate = Convert.ToDateTime(Reader["CreatedKeyDate"]);
+
+                }
+
+                Reader.Close();
+
+            }
+            catch { }
+
+            finally
+            {
+                Connection.Close();
+            }
+
+            return isFind;
+
+        }
+
         public static int AddNew(string Key, string KeyPassword, long KeyPower, DateTime CreatedKeyDate, int ByUserID)
         {
 

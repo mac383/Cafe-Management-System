@@ -121,11 +121,23 @@
     <Compile Include="Forms\Services\UserControls\UC_ServicesSubButtons.Designer.cs">
       <DependentUpon>UC_ServicesSubButtons.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Settings\frms\frm_ConfirmKeyPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\frms\frm_ConfirmKeyPassword.Designer.cs">
+      <DependentUpon>frm_ConfirmKeyPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Settings\frms\frm_DeleteKey.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Settings\frms\frm_DeleteKey.Designer.cs">
       <DependentUpon>frm_DeleteKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\frms\frm_KeyPermissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\frms\frm_KeyPermissions.Designer.cs">
+      <DependentUpon>frm_KeyPermissions.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Settings\UserControls\UC_CurrentUserProfile.cs">
       <SubType>UserControl</SubType>
@@ -186,6 +198,12 @@
     </Compile>
     <Compile Include="Forms\Tables\UserControls\UC_Tables.Designer.cs">
       <DependentUpon>UC_Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Users\Forms\frm_UserPermissions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Users\Forms\frm_UserPermissions.Designer.cs">
+      <DependentUpon>frm_UserPermissions.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Users\UserControls\UC_AddUpdateManagementUsers.cs">
       <SubType>UserControl</SubType>
@@ -256,8 +274,14 @@
     <EmbeddedResource Include="Forms\Services\UserControls\UC_ServicesSubButtons.resx">
       <DependentUpon>UC_ServicesSubButtons.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\frms\frm_ConfirmKeyPassword.resx">
+      <DependentUpon>frm_ConfirmKeyPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\frms\frm_DeleteKey.resx">
       <DependentUpon>frm_DeleteKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\frms\frm_KeyPermissions.resx">
+      <DependentUpon>frm_KeyPermissions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\UserControls\UC_CurrentUserProfile.resx">
       <DependentUpon>UC_CurrentUserProfile.cs</DependentUpon>
@@ -288,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Tables\UserControls\UC_Tables.resx">
       <DependentUpon>UC_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Users\Forms\frm_UserPermissions.resx">
+      <DependentUpon>frm_UserPermissions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Users\UserControls\UC_AddUpdateManagementUsers.resx">
       <DependentUpon>UC_AddUpdateManagementUsers.cs</DependentUpon>

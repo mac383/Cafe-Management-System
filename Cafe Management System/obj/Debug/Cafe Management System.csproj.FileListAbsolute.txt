@@ -71,3 +71,6 @@ J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_M
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.UserControls.UC_SettingsContain.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.frms.frm_DeleteKey.resources
 J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.UserControls.UC_Permissions.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.frms.frm_KeyPermissions.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Settings.frms.frm_ConfirmKeyPassword.resources
+J:\GitHubProjects\Cafe-Management-System\Cafe Management System\obj\Debug\Cafe_Management_System.Forms.Users.Forms.frm_UserPermissions.resources

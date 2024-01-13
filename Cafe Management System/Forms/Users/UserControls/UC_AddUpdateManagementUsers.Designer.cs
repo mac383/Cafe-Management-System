@@ -77,13 +77,14 @@
             this.lbl_showpermissions.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lbl_showpermissions.Location = new System.Drawing.Point(94, 304);
             this.lbl_showpermissions.Name = "lbl_showpermissions";
-            this.lbl_showpermissions.Size = new System.Drawing.Size(159, 22);
+            this.lbl_showpermissions.Size = new System.Drawing.Size(107, 14);
             this.lbl_showpermissions.TabIndex = 47;
             this.lbl_showpermissions.TabStop = true;
             this.lbl_showpermissions.Text = "صلاحيات المستخدم";
             this.lbl_showpermissions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.lbl_showpermissions, "عرض صلاحيات المستخدم");
             this.lbl_showpermissions.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.lbl_showpermissions.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_showpermissions_LinkClicked);
             // 
             // btn_deletepic
             // 
@@ -411,7 +412,7 @@
             this.rb_female.Location = new System.Drawing.Point(157, 46);
             this.rb_female.Name = "rb_female";
             this.rb_female.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rb_female.Size = new System.Drawing.Size(69, 29);
+            this.rb_female.Size = new System.Drawing.Size(46, 19);
             this.rb_female.TabIndex = 7;
             this.rb_female.Text = "أنثئ";
             this.rb_female.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -433,7 +434,7 @@
             this.rb_male.Location = new System.Drawing.Point(94, 46);
             this.rb_male.Name = "rb_male";
             this.rb_male.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rb_male.Size = new System.Drawing.Size(63, 29);
+            this.rb_male.Size = new System.Drawing.Size(42, 19);
             this.rb_male.TabIndex = 6;
             this.rb_male.TabStop = true;
             this.rb_male.Tag = "";

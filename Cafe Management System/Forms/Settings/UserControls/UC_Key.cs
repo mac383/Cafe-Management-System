@@ -42,8 +42,6 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
         private void UC_Key_Load(object sender, EventArgs e)
         {
 
-            //lbl_key.Text = cls_util.GetRandomKey(3, 6, cls_util.EN_KeyType.CapitalLetters) + "-383-mac383";
-
             if (_Key != null)
             {
 
@@ -78,5 +76,24 @@ namespace Cafe_Management_System.Forms.Settings.UserControls
             frm.ShowDialog();
 
         }
+
+        private void btn_showmore_Click(object sender, EventArgs e)
+        {
+
+            frm_KeyPermissions frm = new frm_KeyPermissions(_Key.Key, _Key.KeyPower, true);
+            frm.ShowDialog();
+
+        }
+
+        private void btn_editkey_Click(object sender, EventArgs e)
+        {
+
+            frm_KeyPermissions frm = new frm_KeyPermissions(_Key.Key, _Key.KeyPower, false);
+            frm.ShowDialog();
+            HandleOnDataBack();
+
+        }
+
+        
     }
 }
